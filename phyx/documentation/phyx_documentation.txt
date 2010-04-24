@@ -1,0 +1,318 @@
+-------------------------------
+-- PHYX ENGINE DOCUMENTATION -- 
+-------------------------------
+ 
+ 
+         File Purposes
+-------------------------------
+ - common							- Define files that can be commonly used accross all areas of a project
+   - alg.h
+     - Purpose: this file contains any commonly used algoriths, there is no class, all functions are usable at a global level
+	 - Function List:
+	   - _ButterflySwap(x, y)		- performs a butterfly swap on values, should only be used on ints
+	   - _LittleToBigEndianInt(n)	- converts a little endian int to big endian
+	   - _GetFilePath(path, ext)	- returns the absolute path of a file in the project given the name and extension of the file (takes NSString object as parameters)
+	   - _CStrToNSStr(str)			- converts a c-style string to a NSString object
+	   - _GetFilePathGivenCStr(path, ext)	- same as _GetFilePath except takes c-style strings
+	   - _Swap(T& _a, T& _b)		- templated swap function
+	   - _ShellSort(T* _arr, int _n)- performs a shell sort on an array given a pointer to the first object and the size ( to use with an std::vector use the syntax '_ShellSort<Type>(&TypeVector[0], TypeVector.length())' )
+	   - _ShellSortp(T** _arr, int _n)		- performs a shell sort as above but on an array of pointers, I don't remember why i had to make this different but i remember it was requiered.
+   
+   -  Functors.h
+     - Purpose: define any functors needed by the engine.
+	 - Functor List:
+	   - BaseFunctor				- The base functor that all other functors should derive from
+	   - VTemplatedFunctorV			- A functor representing a void function
+	   - EventFunctor				- A functor used to represent a function that handles events
+   
+   - Guid.h
+     - Purpose: define a Global Unique Identifier
+	 - not implimented yet
+	 - TODO	
+	   - Impliment
+   
+   - Logger.h
+     - Purpose: used to log debug information to a file
+	 - Note: all log functions elvauate to empty if not in debugger
+	 - Interface
+       - LogMsg(std::String& _str)			- Save a string to the file
+	   - SetFilePath(std::string& _str)		- Change the file that strings are saved to.
+	 - TODO			
+	   - assert style logs
+	   - ability to change file flags
+   
+   - Timer.h
+     - Purpose: Define a timer that fires an event after a specific amount of time has elapsed, should only be accessed through _pWorldManager->GetTimerManager()->...
+   
+   - typedefs.h
+     - Purpose: Define some commonly used typedefs to reduce #include overhead
+	 - typedefs
+	   - TextureHandle
+	   - TimerHandle
+	   - SoundHandle
+   
+   - phyxCommon.h
+     - Purpose: define general global phyx engine functions
+	 - Function List:
+	   - InitPhyx(GLuint _viewRenderBuffer, GLuint _viewFrameBuffer, GLint _backingWidth, GLint _backingHeight, EAGLContext* _context)			- Init the phyx engine, should be called before any game specific code
+	   - ShutdownPhyx()			- Shut down the phyx engine, should be called after all game specific code has been shutdown
+  
+   - EventIds.h
+     - Purpose: enumerate all eventid's
+	 
+	 
+	 
+ - components					- Define engine specific and commonly used generic components
+ 
+   - BaseComponent.h
+     - Purpose: Define a base component that all other components should derive from
+	 - Interface:
+	   - Update(float _delta)	- Must be overridden by children, handle code to be updated every frame.
+	   - Render()				- Must be overridden by children, handle render code
+	   
+   - MovementComponent.h
+     - Purpose: make entity movement modular
+	 - Interface:
+	   - MovementComponent(Entity* _entity, float _velocity)		- the entity to be controlled and the velocity it moves at
+	   - SetVelocity(float _velocity)								- modify the velocity of the controlled entity
+	   - SetDestination(const vec2& _destination)					- set a destination the entity will walk in a striat line towards
+	   - SetDirection(vec2& _direction)								- set a direction the entity will walk in until stopped.
+	   
+   - StatComponent
+     - This is a game specific component and should be removed
+	 - TODO: remove
+	 
+	 
+	 
+ - Managers						- Define engine specific managers (all engine specific managers should should be accessed through _pWorldManager)
+
+   - WorldManager
+     - Purpose: This is the main engine manager, manages all other managers
+	 - Notes: Is a singleton, can be accessed via '_pWorldManager->...'
+	 - Interface:
+	   - PreUpdate()			- should be called at the very begining of the main game update loop
+	   - Update(float _delta)	- should be called during the the main game update loop (after preupdate before postupdate)
+	   - PostUpdate()			- should be called at the very end of the main update loop
+	   - PreRender()			- should be called at the very begining of the main render loop
+	   - Render()				- should be called during the main render loop (after prerender before postrender)
+	   - PostRender()			- should be called after the main render loop
+	   - GetDelta()				- return the time sense between the begining of this frame and end of last frame, only valid between preupdate and postupdate calls
+	   - GetEntityManager()		- return a pointer to the entity manage
+	   - GetStateManager()		- return a pointer to the state manager
+       - GetGlobalManager()		- return a pointer to the global manager
+       - GetTimerManager()		- return a pointer to the timer manager
+       - GetComponentManager()	- return a pointer to the component manager
+       - GetEventManager()		- return a pointer to the event manager
+	   
+   - BaseManager.h
+     - Purpose: Define a base manager that all other managers should derive from
+	 - Interface:
+	   - Update(float _delta)	- Must be overriden by children, handle code to be updated every frame.
+	
+   - AttributeManager.h
+     - Purpose: Allow attributes to be injected onto an object.
+	 - Interafce:
+	   - SetAttr<typename T>(PhyxObject* _obj, unsigned _attrName, T attrValue)
+	   - GetAttr<typename T>(PhyxObject* _obj, unsigned _attrName)
+	   - DelAttr(PhyxObject* _obj, unsigned _attrName)
+	   - ClearObjAttrs(PhyxObject* _obj)
+	   
+   - EntityManager.h
+     - Purpose: Handle all entities in the game.
+	 - Interface:
+	   - RegisterEntity(Entity* _entity)
+	 - TODO:
+	   - Functionality listed in backlog.txt
+	   
+   - GlobalManager.h
+     - Purpose: Allow registration of global variables
+	 - Not yet implimented to inteded functionality
+	 - TODO:
+	   - Impliment
+	   
+   - TimerManager.h
+     - Purpose: Manage all game timers
+	 - Interface:
+	   - TimerHandle AddTimer(EVENTID _event, BaseEvent* _data, float _firstTick, float _tickIncrement)		- create a new timer and return a handle
+	   - RemoveTimer(TimerHandle)																			- remove a timer from the manager
+
+   - ComponentManager.h
+     - Purpose: Manage/Update/Render all components
+	 - Interface:
+	   - RegisterComponent(BaseComponent* _component)				- register a component to be managed
+	   - UnregisterComponent(BaseComponent* _component)				- remove a component from the manager
+	   
+   - StateManager.h
+     - Classes
+	   - BaseState
+	     - Purpose: Define a base state object that all game states should derive from
+		 - Interface:
+		   - Enter()				- Must be overridden, define code to execute on entering the state
+		   - Exit()					- Must be overridden, define code to execute on leaving a state
+		   - Update(float _delta)	- Must be overridden, define code to be update every frame
+		   - Render()				- Must be overridden, define any render code to be executed every frame
+	   - StateManager
+	     - Purpose: manage all state objects, Only the top most state gets updated, all states get rendered top most state last.
+		 - Interface:
+		   - ChangeState(BaseState* _state)			- Removes all current states and adds the given state
+		   - PushState(BaseState* _state)			- Push a new state into the state manager
+		   - PopState()								- Pop the top state off
+		   
+   - EventManager.h
+     - Classes
+	   - BaseEvent
+	     - Purpose: Define a base object to store data to be passed with an event, all other event data objects should derive from this.
+	   - Vec2Event
+	     - Purpose: define a event data object that allows a Vec2 to be passed with an event
+	   - EventManager
+	     - Purpose: manage all events
+		 - Notes: EventManager is functor based. To allow a class to handle events give the class the following
+		   - a function following the signiture 'bool functionName(EVENTID _event, BaseEvent* _data)' to handle the events
+		   - an event functor, 'EventFunctor< ClassName > functorName'
+		     - The functor constructor will usually be called in the classes member initializer list like follows: 'classConstructor() : functorName( this, &className::functionName )
+		   - to register for an event, '_pWorldManager->GetEventManager->RegisterClient( eventID, &functorName )
+		   - there is a macro to make this quicker "_RegisterForEvent(type, obj, functionPtr, event)"
+		     - example: "_RegisterForEvent( DPad, this, &DPad::EventHandler, TOUCHES_BEGAN );"
+		   - similarly there are matching macro's for Unregistering
+		     - "_UnregisterForEvent( this );"
+			 - "_UnregisterForSingleEvent( this, TOUCHES_BEGAN );"
+		 - Interface:
+		   - RegisterClient(EVENTID _id, BaseFunctor* _functor)						- Register a new client with an event ( all registered clients MUST be Unregistered to avoid crashes )
+	       - UnregisterClient(BaseFunctor* _functor)								- Unregister a client from all events
+	       - UnregisterClient(EVENTID _id, BaseFunctor* _functor)					- Unregister a client from a single event
+	       - SendEvent(EVENTID _id, BaseEvent* _data, short _frameDelay = 0)		- Send an event that will be processed by everyone registered for it
+	    
+   
+   
+ - math							- define any math related code and math related objects
+ 
+   - rect.h
+     - Purpose: define a rectangle
+	 - Interface:
+	   - rect(float _left, float _bottom, float _right, float _top)					- constructor
+	   - width()																	- return the width
+	   - height()																	- return the height
+	 - TODO:
+	   - why doesn't this follow the win32 rect?
+	   
+	- vec2.h
+	  - Purpose: define a 2d vector object
+	  - Interface:
+	    - static vec2 empty()						- return vec2(0, 0)
+	    - static vec2 upVec()						- return vec2(0, -1)
+		- static vec2 leftVec()						- return vec2(-1, 0)
+		- static vec2 rightVec()					- return vec2(1, 0)
+		- static vec2 downVec()						- return vec2(0, 1)
+		- float magnitude()							- return the vectors magnitude ( should be used sparingly, sqrt() can be slow )
+		- float magnitudeSquared()					- return the vectors magnitude squared ( this is much faster then magnitude and should be used over magnitude whenever possible )
+		- float dot(const vec2& _v)					- return the dot product of 2 vectors
+		- vec2& normalize()							- normalizes the vector and returns *this
+		- vec2& rotate(float _rads)					- rotate a vector by given radians
+		- float angleBetween(const vec2& _v)		- return the angle between 2 vectors in radians
+		- bool equals(const vec2& _v, float tolerance)				- determine if 2 vectors are equal given a tolerance
+		
+   - PhyxMath.h
+     - Purpose: define common 'helper' math functionality
+	 - Functions and Defines:
+	   - _PI														- a #define for the numerical pi
+	   - _2PI														- a #define for 2 * pi
+	   - _DegToRad(_deg)											- a macro to turn degrees to radians
+	   - _RadToDeg(_rad)											- a macro to turn radians to degrees
+	   - _RandFloat(min, max)										- a macro that returns a random float between min and max
+	   - float lerpf(float _f1, float _f2, float _lambda)			- interpolate between two given floats by lambda
+	   - bool floatsAreEqual(float _f1, float _f2, float _epsilon)	- determines if two floats are equal given a tolerance ( _epsilon )
+		
+		
+		
+ - objects											- folder to hold any engine objects
+ 
+   - PhyxObject.h
+     - Purpose: define the most base level phyx object
+	 - Notes: all PhyxObjects have a unique id
+	 - Interface:
+	   - GetID										- return the objects unique id
+ 
+   - Entity.h
+     - Purpose: define a object with a position
+	 - Interface:
+	   - Update(float _delta)						- MUST be overridden by children, any update code to be executed every frame
+	   - Render()									- MUST be overridden by children, any render calls
+	   - GetPosition()								- return the position
+	   
+	   
+	   
+ - wrappers											- folder to contain any wrapper files
+ 
+   - Renderer.h
+     - Purpose: provide a wrapper around all rendering calls
+	 - Notes:
+	   - Currently only supports loading of .tga files
+	   - all textures must be power of 2 in width and height
+	   - textures are only loaded into memory once
+	     - textures are reference counted so they must be 'released' as many times as they've be loaded or 'forceReleased' to be deleted
+	 - Interface:
+	   - Clear()																			- clears out all current textures
+	   - TextureHandle LoadTexture(const char* _fileName, short _width, short _height)		- loads a .tga into memory, given the fileName and the width and height of the actual image ( not the texture's full width and height )
+	   - ReleaseTexture(TextureHandle& _handle)												- releases a reference to that texture, once a file calls this it should not reference the texture again
+	   - ForceReleaseTexture(TextureHandle& _handle)										- force releases a texture, once this is called NOTHING should reference this handle again
+	   - DrawTexture(TextureHandle _handle, const vec2& _pos, bool _centered = true, const vec2& _scale = vec2(1.0f, 1.0f),
+					 const vec2& _rotOrigin = vec2(0.0f, 0.0f), float _rotMagnitude = 0.0f, const rect& _crop = rect::emptyRect(),
+					 float _red = 1.0f, float _green = 1.0f, float _blue = 1.0f, float _alpha = 1.0f);
+																							- Draws a texture to the screen
+																							  - [_pos] position to draw at, ether the top left or center depending on _centered parameters
+																							  - [_centered] weather to draw based on the center or upper left
+																							  - [_scale] x and y scale to draw at
+																							  - [_rotOrigin] from the draw origin ( defined by _centered ) where should i rotate around
+																							  - [_rotMagnitude] amount to rotate by in radians
+																							  - [_crop] area of the texture to draw ( rect::emptyRect() if no cropping desired )
+																							  - [_red] red hue to add
+																							  - [_green] green hue to add
+																							  - [_blue] blue hue to add
+																							  - [_alpha] transparency
+	   - DrawLine(const vec2& _v1, const vec2& _v2, float _red = 1.0f, float _green = 1.0f, float _blue = 1.0f, float _alpha = 1.0f);
+																							- Draws a horizontal or verticle line from _v1 to _v2
+	   - DrawRectSolid(const vec2& _topLeft, const vec2& _bottomRight, 
+	                   float _red = 1.0f, float _green = 1.0f, float _blue = 1.0f, float _alpha = 1.0f)
+																							- Draw a filled in rect
+	   - DrawRect(const vec2& _topLeft, const vec2& _bottomRight, unsigned _lineWidth = 1, 
+	              float _red = 1.0f, float _green = 1.0f, float _blue = 1.0f, float _alpha = 1.0f)
+																							- Draw an outline of a rect
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

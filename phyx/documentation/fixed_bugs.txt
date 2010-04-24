@@ -1,0 +1,14 @@
+File Description:
+This is a place to archive fixed bugs, the fixed bug should be copy and pasted here along with a
+short description of how it was fixed.
+
+
+-->name				date_found			Priority		tasked_to
+Example bug(0)		February 7, 2008	Low				Kyle Rothermel		
+					
+Description
+This is an exmple bug where I keep falling on my headit can be repro'd by doing a hand stand while still holding 
+your computer upright and screaming shanagins.
+
+Fix:
+Screamed "I'm awesome" instead - fall stopped happening.

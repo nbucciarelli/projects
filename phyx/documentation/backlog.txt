@@ -1,0 +1,35 @@
+File Description
+A place to list all backlog items
+
+
+ 
+ 
+ -----------------------
+ --         A         --
+ -----------------------
+ -  Tile Engine
+ -  Animation Engine
+ 
+ 
+ -----------------------
+ --         B         --
+ -----------------------
+ -	review Entity.h/.cpp
+ -  EntityManagers
+    -  Convert to return handles instead of entity objects?
+	-  Add functionality to remove entities from the list
+	-  Add functionality for multiple entity list and enabling/disabling them all
+	   -  functionality for adding new entity lists
+	      - Make those entity list handle based as well?
+		  - Flags on those lists for rendering/updating?
+ -  Move all managers to the handle system?
+ 
+ 
+ -----------------------
+ --         C         --
+ -----------------------
+ -  Render components
+ -  Callback component?
+ -  Renderer.DrawRect/Filled
+ -	review GlobalManager.h/.cpp
+ -	Impliment Guid.h/.cpp

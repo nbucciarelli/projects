@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7208C2D61124FB5B00E44367 /* BaseComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 7208C2D41124FB5B00E44367 /* BaseComponent.h */; };
+		7208C2D71124FB5B00E44367 /* BaseComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7208C2D51124FB5B00E44367 /* BaseComponent.cpp */; };
+		7208C2DA1124FBD900E44367 /* MovementComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 7208C2D81124FBD900E44367 /* MovementComponent.h */; };
+		7208C2DB1124FBD900E44367 /* MovementComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7208C2D91124FBD900E44367 /* MovementComponent.cpp */; };
+		7208C2E31124FD4600E44367 /* ComponentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7208C2E11124FD4600E44367 /* ComponentManager.h */; };
+		7208C2E41124FD4600E44367 /* ComponentManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7208C2E21124FD4600E44367 /* ComponentManager.cpp */; };
+		7208C2E71124FD5800E44367 /* BaseManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7208C2E51124FD5800E44367 /* BaseManager.h */; };
+		7208C2E81124FD5800E44367 /* BaseManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7208C2E61124FD5800E44367 /* BaseManager.cpp */; };
+		726B2780112B791B0033D768 /* StateManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 726B277E112B791B0033D768 /* StateManager.h */; };
+		726B2781112B791B0033D768 /* StateManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 726B277F112B791B0033D768 /* StateManager.cpp */; };
+		7283E933116F9587008CED12 /* AttributeManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7283E931116F9587008CED12 /* AttributeManager.h */; };
+		7283E934116F9587008CED12 /* AttributeManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7283E932116F9587008CED12 /* AttributeManager.cpp */; };
+		728424991144865D0004D346 /* PhyxMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 728424981144865D0004D346 /* PhyxMath.h */; };
+		72883CD4117AB27A0061F33C /* phyx.h in Headers */ = {isa = PBXBuildFile; fileRef = 72883CD2117AB27A0061F33C /* phyx.h */; };
+		72883CD5117AB27A0061F33C /* phyx.mm in Sources */ = {isa = PBXBuildFile; fileRef = 72883CD3117AB27A0061F33C /* phyx.mm */; };
+		728E270E111F49D000763E7F /* alg.h in Headers */ = {isa = PBXBuildFile; fileRef = 728E26E8111F49D000763E7F /* alg.h */; };
+		728E270F111F49D000763E7F /* Functors.h in Headers */ = {isa = PBXBuildFile; fileRef = 728E26E9111F49D000763E7F /* Functors.h */; };
+		728E2710111F49D000763E7F /* Guid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 728E26EA111F49D000763E7F /* Guid.cpp */; };
+		728E2711111F49D000763E7F /* Guid.h in Headers */ = {isa = PBXBuildFile; fileRef = 728E26EB111F49D000763E7F /* Guid.h */; };
+		728E2712111F49D000763E7F /* Logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 728E26EC111F49D000763E7F /* Logger.cpp */; };
+		728E2713111F49D000763E7F /* Logger.h in Headers */ = {isa = PBXBuildFile; fileRef = 728E26ED111F49D000763E7F /* Logger.h */; };
+		728E2714111F49D000763E7F /* Registrar.h in Headers */ = {isa = PBXBuildFile; fileRef = 728E26EE111F49D000763E7F /* Registrar.h */; };
+		728E2715111F49D000763E7F /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 728E26EF111F49D000763E7F /* Timer.cpp */; };
+		728E2716111F49D000763E7F /* Timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 728E26F0111F49D000763E7F /* Timer.h */; };
+		728E271D111F49D000763E7F /* EntityManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 728E26F9111F49D000763E7F /* EntityManager.cpp */; };
+		728E271E111F49D000763E7F /* EntityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 728E26FA111F49D000763E7F /* EntityManager.h */; };
+		728E271F111F49D000763E7F /* GlobalManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 728E26FB111F49D000763E7F /* GlobalManager.cpp */; };
+		728E2720111F49D000763E7F /* GlobalManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 728E26FC111F49D000763E7F /* GlobalManager.h */; };
+		728E2721111F49D000763E7F /* TimerManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 728E26FD111F49D000763E7F /* TimerManager.cpp */; };
+		728E2722111F49D000763E7F /* TimerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 728E26FE111F49D000763E7F /* TimerManager.h */; };
+		728E2725111F49D000763E7F /* rect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 728E2702111F49D000763E7F /* rect.cpp */; };
+		728E2726111F49D000763E7F /* rect.h in Headers */ = {isa = PBXBuildFile; fileRef = 728E2703111F49D000763E7F /* rect.h */; };
+		728E2727111F49D000763E7F /* vec2.h in Headers */ = {isa = PBXBuildFile; fileRef = 728E2704111F49D000763E7F /* vec2.h */; };
+		728E2728111F49D000763E7F /* vec2.mm in Sources */ = {isa = PBXBuildFile; fileRef = 728E2705111F49D000763E7F /* vec2.mm */; };
+		728E2729111F49D000763E7F /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 728E2707111F49D000763E7F /* Entity.cpp */; };
+		728E272A111F49D000763E7F /* Entity.h in Headers */ = {isa = PBXBuildFile; fileRef = 728E2708111F49D000763E7F /* Entity.h */; };
+		728E272B111F49D000763E7F /* PhyxObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 728E2709111F49D000763E7F /* PhyxObject.cpp */; };
+		728E272C111F49D000763E7F /* PhyxObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 728E270A111F49D000763E7F /* PhyxObject.h */; };
+		728E272D111F49D000763E7F /* Renderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 728E270C111F49D000763E7F /* Renderer.h */; };
+		728E272E111F49D000763E7F /* Renderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 728E270D111F49D000763E7F /* Renderer.mm */; };
+		728F8185117BAF7000FF4F08 /* Camera.h in Headers */ = {isa = PBXBuildFile; fileRef = 728F8183117BAF7000FF4F08 /* Camera.h */; };
+		728F8186117BAF7000FF4F08 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 728F8184117BAF7000FF4F08 /* Camera.cpp */; };
+		728FE4AB11321A2B00C52561 /* EventManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 728FE4A911321A2B00C52561 /* EventManager.h */; };
+		728FE4AC11321A2B00C52561 /* EventManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 728FE4AA11321A2B00C52561 /* EventManager.cpp */; };
+		728FE5291132242800C52561 /* EventIds.h in Headers */ = {isa = PBXBuildFile; fileRef = 728FE5281132242800C52561 /* EventIds.h */; };
+		72EEF663112B63C70038073A /* Globals.h in Headers */ = {isa = PBXBuildFile; fileRef = 72EEF662112B63C70038073A /* Globals.h */; };
+		72EEF6F4112B6E550038073A /* phyxCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 72EEF6F2112B6E550038073A /* phyxCommon.h */; };
+		72EEF6F5112B6E550038073A /* phyxCommon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 72EEF6F3112B6E550038073A /* phyxCommon.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		28FD14FF0DC6FC520079059D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		28FD15070DC6FC5B0079059D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7208C2D41124FB5B00E44367 /* BaseComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseComponent.h; sourceTree = "<group>"; };
+		7208C2D51124FB5B00E44367 /* BaseComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseComponent.cpp; sourceTree = "<group>"; };
+		7208C2D81124FBD900E44367 /* MovementComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovementComponent.h; sourceTree = "<group>"; };
+		7208C2D91124FBD900E44367 /* MovementComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MovementComponent.cpp; sourceTree = "<group>"; };
+		7208C2E11124FD4600E44367 /* ComponentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentManager.h; sourceTree = "<group>"; };
+		7208C2E21124FD4600E44367 /* ComponentManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ComponentManager.cpp; sourceTree = "<group>"; };
+		7208C2E51124FD5800E44367 /* BaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseManager.h; sourceTree = "<group>"; };
+		7208C2E61124FD5800E44367 /* BaseManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseManager.cpp; sourceTree = "<group>"; };
+		726B277E112B791B0033D768 /* StateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateManager.h; sourceTree = "<group>"; };
+		726B277F112B791B0033D768 /* StateManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StateManager.cpp; sourceTree = "<group>"; };
+		7283E931116F9587008CED12 /* AttributeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributeManager.h; sourceTree = "<group>"; };
+		7283E932116F9587008CED12 /* AttributeManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AttributeManager.cpp; sourceTree = "<group>"; };
+		728424981144865D0004D346 /* PhyxMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhyxMath.h; sourceTree = "<group>"; };
+		72883CD2117AB27A0061F33C /* phyx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = phyx.h; sourceTree = "<group>"; };
+		72883CD3117AB27A0061F33C /* phyx.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = phyx.mm; sourceTree = "<group>"; };
+		728E2696111F46C000763E7F /* libphyxlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libphyxlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		728E26E8111F49D000763E7F /* alg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alg.h; sourceTree = "<group>"; };
+		728E26E9111F49D000763E7F /* Functors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Functors.h; sourceTree = "<group>"; };
+		728E26EA111F49D000763E7F /* Guid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Guid.cpp; sourceTree = "<group>"; };
+		728E26EB111F49D000763E7F /* Guid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Guid.h; sourceTree = "<group>"; };
+		728E26EC111F49D000763E7F /* Logger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Logger.cpp; sourceTree = "<group>"; };
+		728E26ED111F49D000763E7F /* Logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logger.h; sourceTree = "<group>"; };
+		728E26EE111F49D000763E7F /* Registrar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Registrar.h; sourceTree = "<group>"; };
+		728E26EF111F49D000763E7F /* Timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = "<group>"; };
+		728E26F0111F49D000763E7F /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
+		728E26F9111F49D000763E7F /* EntityManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EntityManager.cpp; sourceTree = "<group>"; };
+		728E26FA111F49D000763E7F /* EntityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityManager.h; sourceTree = "<group>"; };
+		728E26FB111F49D000763E7F /* GlobalManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GlobalManager.cpp; sourceTree = "<group>"; };
+		728E26FC111F49D000763E7F /* GlobalManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalManager.h; sourceTree = "<group>"; };
+		728E26FD111F49D000763E7F /* TimerManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TimerManager.cpp; sourceTree = "<group>"; };
+		728E26FE111F49D000763E7F /* TimerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerManager.h; sourceTree = "<group>"; };
+		728E2702111F49D000763E7F /* rect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rect.cpp; sourceTree = "<group>"; };
+		728E2703111F49D000763E7F /* rect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rect.h; sourceTree = "<group>"; };
+		728E2704111F49D000763E7F /* vec2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vec2.h; sourceTree = "<group>"; };
+		728E2705111F49D000763E7F /* vec2.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = vec2.mm; sourceTree = "<group>"; };
+		728E2707111F49D000763E7F /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
+		728E2708111F49D000763E7F /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
+		728E2709111F49D000763E7F /* PhyxObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhyxObject.cpp; sourceTree = "<group>"; };
+		728E270A111F49D000763E7F /* PhyxObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhyxObject.h; sourceTree = "<group>"; };
+		728E270C111F49D000763E7F /* Renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Renderer.h; sourceTree = "<group>"; };
+		728E270D111F49D000763E7F /* Renderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Renderer.mm; sourceTree = "<group>"; };
+		728E2742111F4A9300763E7F /* backlog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = backlog.txt; sourceTree = "<group>"; };
+		728E2743111F4A9300763E7F /* codeing_standard.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = codeing_standard.txt; sourceTree = "<group>"; };
+		728E2744111F4A9300763E7F /* completed_goals.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = completed_goals.txt; sourceTree = "<group>"; };
+		728E2745111F4A9300763E7F /* fixed_bugs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fixed_bugs.txt; sourceTree = "<group>"; };
+		728E2746111F4A9300763E7F /* known_bugs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = known_bugs.txt; sourceTree = "<group>"; };
+		728F8183117BAF7000FF4F08 /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		728F8184117BAF7000FF4F08 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		728FE4A911321A2B00C52561 /* EventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManager.h; sourceTree = "<group>"; };
+		728FE4AA11321A2B00C52561 /* EventManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventManager.cpp; sourceTree = "<group>"; };
+		728FE5281132242800C52561 /* EventIds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventIds.h; sourceTree = "<group>"; };
+		72AC914C114409C2009D9CB8 /* pixel.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = pixel.tga; sourceTree = "<group>"; };
+		72AC92BB11446042009D9CB8 /* phyx_documentation.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = phyx_documentation.txt; sourceTree = "<group>"; };
+		72EEF662112B63C70038073A /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
+		72EEF6F2112B6E550038073A /* phyxCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = phyxCommon.h; sourceTree = "<group>"; };
+		72EEF6F3112B6E550038073A /* phyxCommon.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = phyxCommon.mm; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		728E2694111F46C000763E7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				728E2696111F46C000763E7F /* libphyxlib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				728E26E6111F49D000763E7F /* phyx */,
+				728E2741111F4A9300763E7F /* documentation */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				72AC914C114409C2009D9CB8 /* pixel.tga */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				28FD15070DC6FC5B0079059D /* QuartzCore.framework */,
+				28FD14FF0DC6FC520079059D /* OpenGLES.framework */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7208C2D31124FB4300E44367 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				7208C2D41124FB5B00E44367 /* BaseComponent.h */,
+				7208C2D51124FB5B00E44367 /* BaseComponent.cpp */,
+				7208C2D81124FBD900E44367 /* MovementComponent.h */,
+				7208C2D91124FBD900E44367 /* MovementComponent.cpp */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		728E26E6111F49D000763E7F /* phyx */ = {
+			isa = PBXGroup;
+			children = (
+				728E26E7111F49D000763E7F /* common */,
+				7208C2D31124FB4300E44367 /* components */,
+				728E26F8111F49D000763E7F /* managers */,
+				728E2701111F49D000763E7F /* math */,
+				728E2706111F49D000763E7F /* objects */,
+				728E270B111F49D000763E7F /* wrappers */,
+				72883CD2117AB27A0061F33C /* phyx.h */,
+				72883CD3117AB27A0061F33C /* phyx.mm */,
+			);
+			path = phyx;
+			sourceTree = "<group>";
+		};
+		728E26E7111F49D000763E7F /* common */ = {
+			isa = PBXGroup;
+			children = (
+				728E26E8111F49D000763E7F /* alg.h */,
+				728E26E9111F49D000763E7F /* Functors.h */,
+				728E26EB111F49D000763E7F /* Guid.h */,
+				728E26EA111F49D000763E7F /* Guid.cpp */,
+				728E26ED111F49D000763E7F /* Logger.h */,
+				728E26EC111F49D000763E7F /* Logger.cpp */,
+				728E26EE111F49D000763E7F /* Registrar.h */,
+				728E26F0111F49D000763E7F /* Timer.h */,
+				728E26EF111F49D000763E7F /* Timer.cpp */,
+				72EEF662112B63C70038073A /* Globals.h */,
+				72EEF6F2112B6E550038073A /* phyxCommon.h */,
+				72EEF6F3112B6E550038073A /* phyxCommon.mm */,
+				728FE5281132242800C52561 /* EventIds.h */,
+				728F8183117BAF7000FF4F08 /* Camera.h */,
+				728F8184117BAF7000FF4F08 /* Camera.cpp */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		728E26F8111F49D000763E7F /* managers */ = {
+			isa = PBXGroup;
+			children = (
+				7283E931116F9587008CED12 /* AttributeManager.h */,
+				7283E932116F9587008CED12 /* AttributeManager.cpp */,
+				7208C2E51124FD5800E44367 /* BaseManager.h */,
+				7208C2E61124FD5800E44367 /* BaseManager.cpp */,
+				728E26FA111F49D000763E7F /* EntityManager.h */,
+				728E26F9111F49D000763E7F /* EntityManager.cpp */,
+				728E26FC111F49D000763E7F /* GlobalManager.h */,
+				728E26FB111F49D000763E7F /* GlobalManager.cpp */,
+				728E26FE111F49D000763E7F /* TimerManager.h */,
+				728E26FD111F49D000763E7F /* TimerManager.cpp */,
+				7208C2E11124FD4600E44367 /* ComponentManager.h */,
+				7208C2E21124FD4600E44367 /* ComponentManager.cpp */,
+				726B277E112B791B0033D768 /* StateManager.h */,
+				726B277F112B791B0033D768 /* StateManager.cpp */,
+				728FE4A911321A2B00C52561 /* EventManager.h */,
+				728FE4AA11321A2B00C52561 /* EventManager.cpp */,
+			);
+			path = managers;
+			sourceTree = "<group>";
+		};
+		728E2701111F49D000763E7F /* math */ = {
+			isa = PBXGroup;
+			children = (
+				728E2703111F49D000763E7F /* rect.h */,
+				728E2702111F49D000763E7F /* rect.cpp */,
+				728E2704111F49D000763E7F /* vec2.h */,
+				728E2705111F49D000763E7F /* vec2.mm */,
+				728424981144865D0004D346 /* PhyxMath.h */,
+			);
+			path = math;
+			sourceTree = "<group>";
+		};
+		728E2706111F49D000763E7F /* objects */ = {
+			isa = PBXGroup;
+			children = (
+				728E2708111F49D000763E7F /* Entity.h */,
+				728E2707111F49D000763E7F /* Entity.cpp */,
+				728E270A111F49D000763E7F /* PhyxObject.h */,
+				728E2709111F49D000763E7F /* PhyxObject.cpp */,
+			);
+			path = objects;
+			sourceTree = "<group>";
+		};
+		728E270B111F49D000763E7F /* wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				728E270C111F49D000763E7F /* Renderer.h */,
+				728E270D111F49D000763E7F /* Renderer.mm */,
+			);
+			path = wrappers;
+			sourceTree = "<group>";
+		};
+		728E2741111F4A9300763E7F /* documentation */ = {
+			isa = PBXGroup;
+			children = (
+				72AC92BB11446042009D9CB8 /* phyx_documentation.txt */,
+				728E2742111F4A9300763E7F /* backlog.txt */,
+				728E2743111F4A9300763E7F /* codeing_standard.txt */,
+				728E2744111F4A9300763E7F /* completed_goals.txt */,
+				728E2745111F4A9300763E7F /* fixed_bugs.txt */,
+				728E2746111F4A9300763E7F /* known_bugs.txt */,
+			);
+			path = documentation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		728E2692111F46C000763E7F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				728E270E111F49D000763E7F /* alg.h in Headers */,
+				728E270F111F49D000763E7F /* Functors.h in Headers */,
+				728E2711111F49D000763E7F /* Guid.h in Headers */,
+				728E2713111F49D000763E7F /* Logger.h in Headers */,
+				728E2714111F49D000763E7F /* Registrar.h in Headers */,
+				728E2716111F49D000763E7F /* Timer.h in Headers */,
+				728E271E111F49D000763E7F /* EntityManager.h in Headers */,
+				728E2720111F49D000763E7F /* GlobalManager.h in Headers */,
+				728E2722111F49D000763E7F /* TimerManager.h in Headers */,
+				728E2726111F49D000763E7F /* rect.h in Headers */,
+				728E2727111F49D000763E7F /* vec2.h in Headers */,
+				728E272A111F49D000763E7F /* Entity.h in Headers */,
+				728E272C111F49D000763E7F /* PhyxObject.h in Headers */,
+				728E272D111F49D000763E7F /* Renderer.h in Headers */,
+				7208C2D61124FB5B00E44367 /* BaseComponent.h in Headers */,
+				7208C2DA1124FBD900E44367 /* MovementComponent.h in Headers */,
+				7208C2E31124FD4600E44367 /* ComponentManager.h in Headers */,
+				7208C2E71124FD5800E44367 /* BaseManager.h in Headers */,
+				72EEF663112B63C70038073A /* Globals.h in Headers */,
+				72EEF6F4112B6E550038073A /* phyxCommon.h in Headers */,
+				726B2780112B791B0033D768 /* StateManager.h in Headers */,
+				728FE4AB11321A2B00C52561 /* EventManager.h in Headers */,
+				728FE5291132242800C52561 /* EventIds.h in Headers */,
+				728424991144865D0004D346 /* PhyxMath.h in Headers */,
+				7283E933116F9587008CED12 /* AttributeManager.h in Headers */,
+				72883CD4117AB27A0061F33C /* phyx.h in Headers */,
+				728F8185117BAF7000FF4F08 /* Camera.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		728E2695111F46C000763E7F /* phyxlib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 728E269C111F46C700763E7F /* Build configuration list for PBXNativeTarget "phyxlib" */;
+			buildPhases = (
+				728E2692111F46C000763E7F /* Headers */,
+				728E2693111F46C000763E7F /* Sources */,
+				728E2694111F46C000763E7F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = phyxlib;
+			productName = phyxlib;
+			productReference = 728E2696111F46C000763E7F /* libphyxlib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "phyx" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				728E2695111F46C000763E7F /* phyxlib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		728E2693111F46C000763E7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				728E2710111F49D000763E7F /* Guid.cpp in Sources */,
+				728E2712111F49D000763E7F /* Logger.cpp in Sources */,
+				728E2715111F49D000763E7F /* Timer.cpp in Sources */,
+				728E271D111F49D000763E7F /* EntityManager.cpp in Sources */,
+				728E271F111F49D000763E7F /* GlobalManager.cpp in Sources */,
+				728E2721111F49D000763E7F /* TimerManager.cpp in Sources */,
+				728E2725111F49D000763E7F /* rect.cpp in Sources */,
+				728E2728111F49D000763E7F /* vec2.mm in Sources */,
+				728E2729111F49D000763E7F /* Entity.cpp in Sources */,
+				728E272B111F49D000763E7F /* PhyxObject.cpp in Sources */,
+				728E272E111F49D000763E7F /* Renderer.mm in Sources */,
+				7208C2D71124FB5B00E44367 /* BaseComponent.cpp in Sources */,
+				7208C2DB1124FBD900E44367 /* MovementComponent.cpp in Sources */,
+				7208C2E41124FD4600E44367 /* ComponentManager.cpp in Sources */,
+				7208C2E81124FD5800E44367 /* BaseManager.cpp in Sources */,
+				72EEF6F5112B6E550038073A /* phyxCommon.mm in Sources */,
+				726B2781112B791B0033D768 /* StateManager.cpp in Sources */,
+				728FE4AC11321A2B00C52561 /* EventManager.cpp in Sources */,
+				7283E934116F9587008CED12 /* AttributeManager.cpp in Sources */,
+				72883CD5117AB27A0061F33C /* phyx.mm in Sources */,
+				728F8186117BAF7000FF4F08 /* Camera.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		728E2697111F46C100763E7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PREBINDING = NO;
+				PRODUCT_NAME = phyxlib;
+			};
+			name = Debug;
+		};
+		728E2698111F46C100763E7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PREBINDING = NO;
+				PRODUCT_NAME = phyxlib;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos2.2.1;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos2.2.1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		728E269C111F46C700763E7F /* Build configuration list for PBXNativeTarget "phyxlib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				728E2697111F46C100763E7F /* Debug */,
+				728E2698111F46C100763E7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "phyx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
