@@ -2,7 +2,7 @@ File Description
 A place to list all backlog items
 
 
- 
+ - Instead of a macro for registering with the event system make a macro for creating a functor
  
  -----------------------
  --         A         --
