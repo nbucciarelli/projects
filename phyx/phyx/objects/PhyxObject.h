@@ -43,6 +43,7 @@ public:
 	
 	/**********************************
 	 *	Function:	Render
+	 *	TODO: Rendering should all be handled by the renderer.
 	 **********************************/
 	virtual void Render() = 0;
 	
