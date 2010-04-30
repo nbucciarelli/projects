@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01DA892F118B7A0F0060C5B6 /* MenuState.mm in Sources */ = {isa = PBXBuildFile; fileRef = 01DA892E118B7A0F0060C5B6 /* MenuState.mm */; };
 		1D3623260D0F684500981E51 /* bullet_hellAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* bullet_hellAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -18,7 +19,6 @@
 		726B272E112B728A0033D768 /* libphyxlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 726B272B112B72220033D768 /* libphyxlib.a */; };
 		726B275A112B74D20033D768 /* Game.mm in Sources */ = {isa = PBXBuildFile; fileRef = 726B2759112B74D20033D768 /* Game.mm */; };
 		726B283B112B87680033D768 /* GamePlayState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 726B283A112B87680033D768 /* GamePlayState.cpp */; };
-		726B284E112B88D30033D768 /* MenuState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 726B284D112B88D30033D768 /* MenuState.cpp */; };
 		726B2853112B89770033D768 /* Avatar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 726B2852112B89770033D768 /* Avatar.cpp */; };
 		726B2859112B8A800033D768 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 726B2858112B8A800033D768 /* Enemy.cpp */; };
 		72AC91261141ED3D009D9CB8 /* DPad.mm in Sources */ = {isa = PBXBuildFile; fileRef = 72AC91251141ED3D009D9CB8 /* DPad.mm */; };
@@ -46,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01DA892E118B7A0F0060C5B6 /* MenuState.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MenuState.mm; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* bullet_hellAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bullet_hellAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* bullet_hellAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bullet_hellAppDelegate.m; sourceTree = "<group>"; };
@@ -64,7 +65,6 @@
 		726B2839112B87680033D768 /* GamePlayState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePlayState.h; sourceTree = "<group>"; };
 		726B283A112B87680033D768 /* GamePlayState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GamePlayState.cpp; sourceTree = "<group>"; };
 		726B284C112B88D30033D768 /* MenuState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuState.h; sourceTree = "<group>"; };
-		726B284D112B88D30033D768 /* MenuState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MenuState.cpp; sourceTree = "<group>"; };
 		726B2851112B89770033D768 /* Avatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Avatar.h; sourceTree = "<group>"; };
 		726B2852112B89770033D768 /* Avatar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Avatar.cpp; sourceTree = "<group>"; };
 		726B2857112B8A800033D768 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
@@ -197,10 +197,10 @@
 		726B281C112B871C0033D768 /* states */ = {
 			isa = PBXGroup;
 			children = (
+				01DA892E118B7A0F0060C5B6 /* MenuState.mm */,
 				726B2839112B87680033D768 /* GamePlayState.h */,
 				726B283A112B87680033D768 /* GamePlayState.cpp */,
 				726B284C112B88D30033D768 /* MenuState.h */,
-				726B284D112B88D30033D768 /* MenuState.cpp */,
 				72FA6199112BAA620079366F /* CreditsState.h */,
 				72FA619A112BAA620079366F /* CreditsState.cpp */,
 			);
@@ -311,11 +311,11 @@
 				28FD14FE0DC6FC130079059D /* EAGLView.mm in Sources */,
 				726B275A112B74D20033D768 /* Game.mm in Sources */,
 				726B283B112B87680033D768 /* GamePlayState.cpp in Sources */,
-				726B284E112B88D30033D768 /* MenuState.cpp in Sources */,
 				726B2853112B89770033D768 /* Avatar.cpp in Sources */,
 				726B2859112B8A800033D768 /* Enemy.cpp in Sources */,
 				72FA619B112BAA620079366F /* CreditsState.cpp in Sources */,
 				72AC91261141ED3D009D9CB8 /* DPad.mm in Sources */,
+				01DA892F118B7A0F0060C5B6 /* MenuState.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

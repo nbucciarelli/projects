@@ -27,6 +27,8 @@ private:
 	// Our game manager
 	static Game			sm_Instance;
 	
+	
+	
 public:
 	/*	Public Functions		*/
 	

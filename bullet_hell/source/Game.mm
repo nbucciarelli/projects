@@ -13,6 +13,8 @@
 #include "phyx/phyx.h"
 #include "phyx/managers/EntityManager.h"
 
+#include "states/MenuState.h"
+
 // Objects
 #include "objects/DPad.h"
 

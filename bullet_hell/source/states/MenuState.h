@@ -11,6 +11,8 @@
 #ifndef MenuState_H_
 #define MenuState_H_
 
+#include "phyx/common/Globals.h"
+
 #include "phyx/managers/StateManager.h"
 class MenuState : public BaseState
 {
@@ -22,6 +24,7 @@ protected:
 	
 private:
 	/*	Private Data Members	*/
+	TextureHandle			m_thBackGround;
 	
 public:
 	/*	Public Functions		*/
