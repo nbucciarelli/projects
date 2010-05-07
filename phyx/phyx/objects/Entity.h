@@ -45,11 +45,6 @@ public:
 	virtual void Update(float _delta) = 0;
 	
 	/**********************************
-	 *	Function:	Render
-	 **********************************/
-	virtual void Render() = 0;
-	
-	/**********************************
 	 *	Function:	Accessors
 	 **********************************/
 	inline const vec2& GetPosition()	{ return m_vPosition; }

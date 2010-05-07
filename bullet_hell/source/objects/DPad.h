@@ -44,11 +44,6 @@ public:
 	void Update(float _delta);
 	
 	/**********************************
-	 *	Function:	Render
-	 **********************************/
-	void Render(void);
-	
-	/**********************************
 	 *	Function:	event handlers
 	 **********************************/
 	bool TouchesBegan(unsigned _event, BaseEvent* _data);

@@ -38,10 +38,6 @@ void DPad::Update(float _delta)
 {
 }
 
-void DPad::Render(void)
-{
-}
-
 bool DPad::TouchesBegan(unsigned _event, BaseEvent* _data)
 {
 	return true;

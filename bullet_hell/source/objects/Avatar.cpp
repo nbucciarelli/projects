@@ -21,14 +21,6 @@ void Avatar::Update(float _delta)
 {
 }
 
-void Avatar::Render()
-{
-}
-
-
-
-
-
 
 
 

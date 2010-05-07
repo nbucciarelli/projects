@@ -24,7 +24,3 @@ Entity::~Entity()
 void Entity::Update(float _delta)
 {
 }
-
-void Entity::Render()
-{
-}

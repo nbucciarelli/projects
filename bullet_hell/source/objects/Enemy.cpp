@@ -20,9 +20,3 @@ Enemy::~Enemy()
 void Enemy::Update(float _delta)
 {
 }
-
-void Enemy::Render()
-{
-}
-
-

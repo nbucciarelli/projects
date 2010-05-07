@@ -197,10 +197,10 @@
 		726B281C112B871C0033D768 /* states */ = {
 			isa = PBXGroup;
 			children = (
+				726B284C112B88D30033D768 /* MenuState.h */,
 				01DA892E118B7A0F0060C5B6 /* MenuState.mm */,
 				726B2839112B87680033D768 /* GamePlayState.h */,
 				726B283A112B87680033D768 /* GamePlayState.cpp */,
-				726B284C112B88D30033D768 /* MenuState.h */,
 				72FA6199112BAA620079366F /* CreditsState.h */,
 				72FA619A112BAA620079366F /* CreditsState.cpp */,
 			);

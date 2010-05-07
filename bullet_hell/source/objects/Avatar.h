@@ -40,11 +40,6 @@ public:
 	 **********************************/
 	void Update(float _delta);
 	
-	/**********************************
-	 *	Function:	Render
-	 **********************************/
-	void Render();
-	
 protected:
 	/*	Protected Functions		*/
 	
