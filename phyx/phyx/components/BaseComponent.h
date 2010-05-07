@@ -13,7 +13,8 @@
 
 class Entity;
 
-class BaseComponent
+#include "../objects/PhyxObject.h"
+class BaseComponent : public PhyxObject
 {
 public:
 	/*	Public Data Members		*/

@@ -14,24 +14,23 @@
 #include <string>
 #include <map>
 
+#include "../common/Logger.h"
+
 class PhyxObject;
 
 #include "BaseManager.h"
 class AttributeManager : public BaseManager
 {
+	friend class phyx;
 public:
 	/*	Public Data Members		*/
-	enum ENGINE_ATTRIBUTES {
-		ID = 0,
-		POSITION
-	};
 	
 protected:
 	/*	Protected Data Members	*/
 	
 private:
 	/*	Private Data Members	*/
-	typedef std::map< unsigned, void* >			attrList;
+	typedef std::map< std::string, void* >		attrList;
 	typedef std::map< PhyxObject*, attrList >	attrDatabase;
 	
 	attrDatabase								m_mAttrDatabase;
@@ -55,25 +54,32 @@ public:
 	 **********************************/
 	void Update(float _delta);
 	
+	
+protected:
+	/*	Protected Functions		*/
+	
+private:
+	/*	Private Functions		*/
+	
 	/**********************************
 	 *	Function:	SetAttr
 	 *	Purpose:	Set the value of an attribute
 	 *	Notes:		If this attribute doesn't exist it WILL be created.
 	 **********************************/
 	template <typename T>
-	void SetAttr(PhyxObject* _obj, unsigned _attrName, T attrValue)
+	void SetAttr(PhyxObject* _obj, std::string& _attrName, T _attrValue)
 	{
 		if ( m_mAttrDatabase.find( _obj ) == m_mAttrDatabase.end() )
 		{
 			m_mAttrDatabase[_obj] = attrList();
 		}
 		
-		if ( m_mAttrDatabase[_obj].find( _attrName ) == m_mAttrDatabase.end() )
+		if ( m_mAttrDatabase[_obj].find( _attrName ) == m_mAttrDatabase[_obj].end() )
 		{
 			m_mAttrDatabase[_obj][_attrName] = malloc( sizeof(T) );
 		}
-			
-		*(T*)m_mAttrDatabase[_obj][_attrName] = attrValue;
+		
+		*(T*)m_mAttrDatabase[_obj][_attrName] = _attrValue;
 	}
 	
 	/**********************************
@@ -82,7 +88,7 @@ public:
 	 *	Notes:		Returns NULL if attr or obj doesn't exist in database.
 	 **********************************/
 	template <typename T>
-	const T * const GetAttr(PhyxObject* _obj, unsigned _attrName)
+	const T * const GetAttr(PhyxObject* _obj, std::string& _attrName)
 	{
 		if ( m_mAttrDatabase.find( _obj ) == m_mAttrDatabase.end() )
 		{
@@ -104,20 +110,13 @@ public:
 	 *	Purpose:	Delete an attribute
 	 *	Notes:		If its the last attribute owned by this object it removes the object from the database.
 	 **********************************/
-	bool DelAttr(PhyxObject* _obj, unsigned _attrName);
+	bool DelAttr(PhyxObject* _obj, std::string& _attrName);
 	
 	/**********************************
 	 *	Function:	ClearObj
 	 *	Purpose:	Clear all attributes for an obj.
 	 **********************************/
 	bool ClearObjAttrs(PhyxObject* _obj);
-	
-	
-protected:
-	/*	Protected Functions		*/
-	
-private:
-	/*	Private Functions		*/
 };
 
 #endif

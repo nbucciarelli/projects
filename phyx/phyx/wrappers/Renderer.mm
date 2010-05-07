@@ -13,6 +13,7 @@
 #include <fstream>
 
 #include "../common/alg.h"
+#include "../common/Logger.h"
 
 CRenderer CRenderer::sm_Instance;
 
@@ -191,7 +192,10 @@ void CRenderer::DrawTexture(TextureHandle _handle, const vec2& _pos, bool _cente
 		const vec2& _rotOrigin, float _rotMagnitude, const rect& _crop, float _red, float _green, float _blue, float _alpha)
 {
 	if (_handle == -1)
-		return; // logger dis?
+	{
+		logger->log( "Failed to render a texture with id -1.", ERROR );
+		return;
+	}
 	
 	// Get a pointer to the texture to draw
 	tTexture* tex = &m_vTextures[_handle];
@@ -289,10 +293,13 @@ void CRenderer::DrawRect(const vec2& _topLeft, const vec2& _bottomRight, unsigne
 	/* Private Functions	*/
 
 GLbyte* CRenderer::DecodeTGA(const char* _fileName, short& _canvasWidth, short& _canvasHeight)
-{	
+{
 	std::ifstream fin(_GetFilePathGivenCStr(_fileName), std::ios::binary);
 	if (!fin.is_open())
-		return NULL;// TODO:: logger dis.
+	{
+		logger->log( "Failed to open file in CRenderer::DecodeTGA", ERROR );
+		return NULL;
+	}
 	
 	tTGAHeader tgaHeader;
 	

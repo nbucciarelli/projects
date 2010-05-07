@@ -12,7 +12,6 @@
 #include "wrappers/Renderer.h"
 
 #include "managers/EntityManager.h"
-#include "managers/TimerManager.h"
 #include "managers/StateManager.h"
 #include "managers/EventManager.h"
 #include "common/Logger.h"
@@ -35,9 +34,8 @@ void phyx::Initialize()
 	
 	m_pEntityManager = new EntityManager();
 	m_pStateManager = new StateManager();
-	m_pTimerManager = new TimerManager();
 	m_pEventManager = new EventManager();
-	m_pLogger = new Logger();
+	m_pAttributeManager = new AttributeManager();
 	
 	entities = m_pEntityManager;
 }
@@ -46,9 +44,8 @@ void phyx::Shutdown()
 {
 	SAFE_DELETE(m_pEntityManager);
 	SAFE_DELETE(m_pStateManager);
-	SAFE_DELETE(m_pTimerManager);
 	SAFE_DELETE(m_pEventManager);
-	SAFE_DELETE(m_pLogger);
+	SAFE_DELETE(m_pAttributeManager);
 	entities = NULL;
 }
 
@@ -64,7 +61,6 @@ void phyx::Update()
 	
 	m_pStateManager->Update( delta );
 	m_pEntityManager->Update( delta );
-	m_pTimerManager->Update( delta );
 }
 
 void phyx::PostUpdate()
@@ -90,9 +86,14 @@ void phyx::PostRender()
 	_pRenderer->End();
 }
 
-void phyx::RegisterEntity( PhyxObject* _entity )
+void phyx::RegisterEntity( PhyxObject* _object )
 {
-	m_pEntityManager->RegisterEntity( _entity );
+	m_pEntityManager->RegisterEntity( _object );
+}
+
+void phyx::RemoveEntity(PhyxObject* _object)
+{
+	m_pEntityManager->RemoveEntity( _object );
 }
 
 void phyx::RegisterClient(unsigned _id, BaseFunctor* _functor)
@@ -115,16 +116,6 @@ void phyx::SendEvent(unsigned _id, BaseEvent* _data, short _frameDelay)
 	m_pEventManager->SendEvent(_id, _data, _frameDelay);
 }
 
-TimerHandle phyx::AddTimer( unsigned _event, BaseEvent* _data, float _firstTick, float _tickIncrement )
-{
-	return m_pTimerManager->AddTimer(_event, _data, _firstTick, _tickIncrement);
-}
-
-void phyx::RemoveTimer( Timer* _timer )
-{
-	m_pTimerManager->RemoveTimer( _timer );
-}
-
 void phyx::ChangeState(BaseState* _state)
 {
 	m_pStateManager->ChangeState( _state );
@@ -145,23 +136,15 @@ void phyx::ClearStates()
 	m_pStateManager->Clear();
 }
 
-void phyx::LogMsg( std::string& _msg )
+bool phyx::DelAttr(PhyxObject* _obj, std::string& _attrName)
 {
-	m_pLogger->LogMsg( _msg );
+	return m_pAttributeManager->DelAttr( _obj, _attrName );
 }
 
-void phyx::Assert( bool _fail, std::string& _msg )
+bool phyx::ClearObjAttrs(PhyxObject* _obj)
 {
-	m_pLogger->Assert( _fail, _msg );
+	return m_pAttributeManager->ClearObjAttrs( _obj );
 }
-
-void phyx::ClearLogFile()
-{
-	m_pLogger->ClearFile();
-}
-
-
-
 
 
 

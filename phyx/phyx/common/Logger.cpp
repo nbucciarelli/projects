@@ -11,11 +11,17 @@
 
 #include "TargetConditionals.h"
 
+Logger Logger::sm_Instance;
 
 Logger::Logger()
 {
 	m_fout = NULL;
 	m_szFilePath = "logFile.txt";
+	
+	// Clear file on launch.
+	std::ofstream fout;
+	fout.open( m_szFilePath.c_str() );
+	fout.close();
 }
 
 Logger::~Logger()
@@ -28,33 +34,63 @@ Logger::~Logger()
 }
 
 #if (TARGET_IPHONE_SIMULATOR)
-	void Logger::LogMsg( std::string& _str )
+	void Logger::log( char* _str, SEVERITY _severity )
 	{
-		ValidateStream();
-		(*m_fout) << _str;
+		//ValidateStream();
+		std::ofstream fout( m_szFilePath.c_str(), std::ios::app );
+		std::string severity;
+		switch ( _severity ) 
+		{
+			case INFO:
+				severity = "INFO";
+				break;
+			case WARNING:
+				severity = "WARNING";
+				break;
+			case ERROR:
+				severity = "ERROR";
+				break;
+		}
+		fout << _str << "\t\tSeverity: " << severity << '\n';
+		fout.close();
 	}
 
-	void Logger::Assert( bool _fail, std::string& _str )
+	void Logger::log( bool _fail, char* _str, SEVERITY _severity )
 	{
 		if ( !_fail )
 		{
-			ValidateStream();
-			(*m_fout) << _str;
+			//ValidateStream();
+			std::ofstream fout( m_szFilePath.c_str(), std::ios::app );
+			std::string severity;
+			switch ( _severity ) 
+			{
+				case INFO:
+					severity = "INFO";
+					break;
+				case WARNING:
+					severity = "WARNING";
+					break;
+				case ERROR:
+					severity = "ERROR";
+					break;
+			}
+			fout << _str << "Severity: " << severity;
+			fout.close();
 		}
 	}
 #else
-	void Logger::LogMsg( std::sting& _str )
+	void Logger::log( char* _str, SEVERITY _severity )
 	{
 	}
 
-	void Logger::Assert( bool _fail, std::string& _str )
+	void Logger::log( bool _fail, char* _str, SEVERITY _severity )
 	{
 	}
 #endif
 
 void Logger::ValidateStream()
 {
-	if ( m_fout = NULL )
+	if ( m_fout == NULL )
 	{
 		m_fout = new std::ofstream();
 		m_fout->open( m_szFilePath.c_str() );

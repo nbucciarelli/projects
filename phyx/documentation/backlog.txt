@@ -1,35 +1,40 @@
 File Description
 A place to list all backlog items
 
+-------------------------
+-- In Queue
+-------------------------
+[ ] Review the way rendering is done
+[ ] Macro for creating a functor instead of for registering with event system
+[ ] Replace all commented out 'log' calls with real calls to logger
+[ ] Look into how objects are deleted.
+[ ] Impliment instant event firing
+[ ] Tile Engine
+[ ] Animation Engine
+[ ] Review GlobalManager
+[ ] Review AttributeManager
+[ ] Look into a callback component
+[ ] Impliment Guid
+[ ] convert rgba in renderer::drawTexture to a vec4 (will require writing vec4 and rendercomponent adjustments)
 
- - Instead of a macro for registering with the event system make a macro for creating a functor
- 
- -----------------------
- --         A         --
- -----------------------
- -  Tile Engine
- -  Animation Engine
- 
- 
- -----------------------
- --         B         --
- -----------------------
- -	review Entity.h/.cpp
- -  EntityManagers
-    -  Convert to return handles instead of entity objects?
-	-  Add functionality to remove entities from the list
-	-  Add functionality for multiple entity list and enabling/disabling them all
-	   -  functionality for adding new entity lists
-	      - Make those entity list handle based as well?
-		  - Flags on those lists for rendering/updating?
- -  Move all managers to the handle system?
+
+-------------------------
+-- Completed
+-------------------------
+[X] Add functionality to renderer: DrawRect, DrawRectFilled
+
+
+-------------------------
+-- To be determined
+-------------------------
+[ ] review Entity.h/.cpp
+[ ] EntityManagers
+	[ ] Convert to return handles instead of entity objects?
+	[ ] Add functionality to remove entities from the list
+	[ ] Add functionality for multiple entity list and enabling/disabling them all
+		[ ] functionality for adding new entity lists
+			[ ] Make those entity list handle based as well?
+			[ ] Flags on those lists for rendering/updating?
+[ ] Move all managers to the handle system?
  
  
- -----------------------
- --         C         --
- -----------------------
- -  Render components
- -  Callback component?
- -  Renderer.DrawRect/Filled
- -	review GlobalManager.h/.cpp
- -	Impliment Guid.h/.cpp

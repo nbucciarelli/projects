@@ -14,9 +14,10 @@
 #include <string>
 #include <fstream>
 
+enum SEVERITY { INFO = 0, WARNING, ERROR };
+
 class Logger
 {
-	friend class phyx;
 public:
 	/*	Public Data Members		*/
 	
@@ -28,8 +29,26 @@ private:
 	std::string		m_szFilePath;
 	std::ofstream*	m_fout;
 	
+	
+	// Instance of main engine object
+	static Logger		sm_Instance;
+	
 public:
 	/*	Public Functions		*/
+	
+	static Logger* GetInstance() { return &sm_Instance; }
+	
+	/**********************************
+	 *	Function:	log
+	 *	Purpose:	log a message to open file.
+	 **********************************/
+	void log( char* _str, SEVERITY _severity );
+	
+	/**********************************
+	 *	Function:	log
+	 *	Purpose:	log a msg if !_fail.
+	 **********************************/
+	void log( bool _fail, char* _str, SEVERITY _severity );
 	
 protected:
 	/*	Protected Functions		*/
@@ -51,18 +70,6 @@ private:
 	~Logger();
 	
 	/**********************************
-	 *	Function:	LogMsg
-	 *	Purpose:	mog a message to open file.
-	 **********************************/
-	void LogMsg( std::string& _str );
-	
-	/**********************************
-	 *	Function:	LogMsg
-	 *	Purpose:	mog a message to open file.
-	 **********************************/
-	void Assert( bool _fail, std::string& _str );
-	
-	/**********************************
 	 *	Function:	ClearFile
 	 **********************************/
 	void ClearFile();
@@ -73,5 +80,7 @@ private:
 	void SetFilePath( std::string& _filePath );
 
 };
+
+static Logger * const logger = Logger::GetInstance();
 
 #endif

@@ -1,30 +1,35 @@
 /*
- *  Entity.h
+ *  RenderComponent.h
  *  phyx
  *
- *  Created by Kyle Rothermel on 2/7/10.
+ *  Created by Kyle Rothermel on 5/2/10.
  *  Copyright 2010 __MyCompanyName__. All rights reserved.
  *
  */
 
 
-#ifndef Entity_H_
-#define Entity_H_
+#ifndef RenderComponent_H_
+#define RenderComponent_H_
 
-#include "../math/vec2.h"
+#include <string>
 
-#include "PhyxObject.h"
-class Entity : public PhyxObject
+#include "../common/Globals.h"
+
+#include "BaseComponent.h"
+class RenderComponent : public BaseComponent
 {
 public:
 	/*	Public Data Members		*/
 	
 protected:
 	/*	Protected Data Members	*/
-	vec2							m_vPosition;
 	
 private:
 	/*	Private Data Members	*/
+	
+	TextureHandle	m_thTextureHandle;
+	bool			m_bDrawCentered;
+	unsigned		m_uPriority;
 	
 public:
 	/*	Public Functions		*/
@@ -32,32 +37,22 @@ public:
 	/**********************************
 	 *	Function:	Constructor
 	 **********************************/
-	Entity();
+	RenderComponent(Entity* _controlledEntity, const char* _textureName, short _texWidth, short _texHeight, bool _drawCentered, unsigned _priority);
 	
 	/**********************************
 	 *	Function:	Destructor
 	 **********************************/
-	virtual ~Entity() = 0;
+	~RenderComponent();
 	
 	/**********************************
 	 *	Function:	Update
 	 **********************************/
-	virtual void Update(float _delta) = 0;
+	void Update(float _delta);
 	
 	/**********************************
 	 *	Function:	Render
 	 **********************************/
-	virtual void Render() = 0;
-	
-	/**********************************
-	 *	Function:	Accessors
-	 **********************************/
-	inline const vec2& GetPosition()	{ return m_vPosition; }
-	
-	/**********************************
-	 *	Function:	mutators
-	 **********************************/
-	inline const void SetPosition(const vec2& _pos)		{ m_vPosition = _pos; }
+	void Render();
 	
 protected:
 	/*	Protected Functions		*/

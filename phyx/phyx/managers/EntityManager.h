@@ -35,7 +35,7 @@ public:
 	/**********************************
 	 *	Function:	Operator overloads
 	 **********************************/
-	inline PhyxObject* operator[](unsigned _id)	{ return m_mEntities[_id]; }
+	PhyxObject* operator[](unsigned _id);
 	
 	
 protected:
@@ -59,7 +59,13 @@ private:
 	 *	Function:	RegisterEntity
 	 *	Purpose:	Add a new entity to the manager
 	 **********************************/
-	void RegisterEntity(PhyxObject* _entity);
+	void RegisterEntity(PhyxObject* _object);
+	
+	/**********************************
+	 *	Function:	RemoveEntity
+	 *	Purpose:	Remove an entity
+	 **********************************/
+	void RemoveEntity(PhyxObject* _object);
 	
 	/**********************************
 	 *	Function:	Update

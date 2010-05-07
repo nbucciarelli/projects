@@ -14,16 +14,14 @@
 #include <CoreFoundation/CoreFoundation.h>
 #include <string>
 
-#include "common/Globals.h"
+#include "managers/AttributeManager.h"
 
 class EntityManager;
 class StateManager;
-class TimerManager;
 class Timer;
 class EventManager;
 class Entity;
 class BaseEvent;
-class Logger;
 class BaseState;
 class PhyxObject;
 class BaseFunctor;
@@ -47,11 +45,10 @@ private:
 	/*	Private Data Members	*/
 	
 	// Engine managers
-	EntityManager*	m_pEntityManager;
-	StateManager*	m_pStateManager;
-	TimerManager*	m_pTimerManager;
-	EventManager*	m_pEventManager;
-	Logger*			m_pLogger;
+	EntityManager*		m_pEntityManager;
+	StateManager*		m_pStateManager;
+	EventManager*		m_pEventManager;
+	AttributeManager*	m_pAttributeManager;
 	
 	// For time keeping
 	CFAbsoluteTime	m_currTime;
@@ -129,7 +126,13 @@ public:
 	 *	Function:	RegisterEntity
 	 *	Purpose:	Register a new entity
 	 **********************************/
-	void RegisterEntity(PhyxObject* _entity);
+	void RegisterEntity(PhyxObject* _object);
+	
+	/**********************************
+	 *	Function:	RemoveEntity
+	 *	Purpose:	Register a new entity
+	 **********************************/
+	void RemoveEntity(PhyxObject* _object);
 	
 	/*
 	 *	Event Manager forwards
@@ -160,22 +163,6 @@ public:
 	void SendEvent(unsigned _id, BaseEvent* _data = NULL, short _frameDelay = 0);
 	
 	/*
-	 *	Timer Manager forwards
-	 */
-	
-	/**********************************
-	 *	Function:	RemoveTimer
-	 *	Purpose:	Forward a request for a new event to the event manager.
-	 **********************************/
-	TimerHandle AddTimer( unsigned _event, BaseEvent* _data, float _firstTick, float _tickIncrement );
-	
-	/**********************************
-	 *	Function:	RemoveTimer
-	 *	Purpose:	Forward a request for a new event to the event manager.
-	 **********************************/
-	void RemoveTimer( Timer* _timer );
-	
-	/*
 	 *	State manager forwards
 	 */
 	
@@ -204,26 +191,37 @@ public:
 	void ClearStates();
 	
 	/*
-	 *	Logger forwards
+	 *	AttributeManager forwards
 	 */
 	
 	/**********************************
-	 *	Function:	LogMsg
-	 *	Purpose:	Forward a request to log a message to the logger
+	 *	Function:	SetAttr
+	 *	Purpose:	Sets an attribute, creates it if nessessary.
 	 **********************************/
-	void LogMsg( std::string& _msg );
+	template <typename T>
+	void SetAttr(PhyxObject* _obj, std::string& _attrName, T _attrValue)
+	{ m_pAttributeManager->SetAttr<T>( _obj, _attrName, _attrValue ); }
 	
 	/**********************************
-	 *	Function:	Assert
-	 *	Purpose:	Log a message if not _fail
+	 *	Function:	GetAttr
+	 *	Purpose:	Gets an attribute, return NULL if it doesn't exist.
 	 **********************************/
-	void Assert( bool _fail, std::string& _msg );
+	template <typename T>
+	const T * const GetAttr(PhyxObject* _obj, std::string& _attrName)
+	{ return m_pAttributeManager->GetAttr<T>( _obj, _attrName ); }
 	
 	/**********************************
-	 *	Function:	ClearLogFile
-	 *	Purpose:	Clear the log flie
+	 *	Function:	DetAttr
+	 *	Purpose:	Delete an attribute.
 	 **********************************/
-	void ClearLogFile();
+	bool DelAttr(PhyxObject* _obj, std::string& _attrName);
+	
+	/**********************************
+	 *	Function:	ClearObjAttrs
+	 *	Purpose:	Clear all attributes from an obj.
+	 **********************************/
+	bool ClearObjAttrs(PhyxObject* _obj);
+	
 	
 protected:
 	/*	Protected Functions		*/

@@ -11,10 +11,7 @@
 #ifndef DPad_H_
 #define DPad_H_
 
-#include "phyx/common/Globals.h"
-#include "phyx/common/Functors.h"
-#include "phyx/managers/EventManager.h"
-
+class BaseEvent;
 
 #include "phyx/objects/Entity.h"
 class DPad : public Entity
@@ -27,9 +24,6 @@ protected:
 	
 private:
 	/*	Private Data Members	*/
-	
-	// The backdrop texture
-	TextureHandle			m_thBackDrop;
 	
 public:
 	/*	Public Functions		*/

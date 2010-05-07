@@ -13,9 +13,10 @@
 
 #include "EventIds.h"
 
+#include "../objects/PhyxObject.h"
 class BaseEvent;
 
-class Timer
+class Timer : public PhyxObject
 {
 public:
 	/*	Public Data Members		*/
@@ -48,6 +49,12 @@ public:
 	 *	Purpose:	update the timer
 	 **********************************/
 	void Update(float _delta);
+	
+	
+	/**********************************
+	 *	Function:	Render
+	 **********************************/
+	void Render();
 	
 protected:
 	/*	Protected Functions		*/

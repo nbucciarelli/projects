@@ -28,11 +28,11 @@ void AttributeManager::Update(float _delta)
 {
 }
 
-bool AttributeManager::DelAttr(PhyxObject* _obj, unsigned _attrName)
+bool AttributeManager::DelAttr(PhyxObject* _obj, std::string& _attrName)
 {
 	if ( m_mAttrDatabase.find( _obj ) == m_mAttrDatabase.end() )
 	{
-		// log.msg( "No AttrTable for object: " + std::string(&_obj), log::WARNING )
+		logger->log( "Failed attempt to delete invalid attribute in AttributeManager", WARNING ); // "No AttrTable for object at: %i" + _obj ).c_str() , WARNING );
 		return false;
 	}
 	

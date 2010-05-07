@@ -9,7 +9,8 @@
 
 #include "DPad.h"
 
-#include "phyx/wrappers/Renderer.h"
+#include "phyx/managers/EventManager.h"
+#include "phyx/components/RenderComponent.h"
 #include "phyx/math/vec2.h"
 #include "phyx/phyx.h"
 
@@ -17,7 +18,11 @@
 DPad::DPad() :
 	Entity()
 {
-	m_thBackDrop = _pRenderer->LoadTexture("dpad_backdrop.tga", 16, 16);
+	// Init render object
+	m_vPosition = vec2( 50.0f, 320.0f - 50.0f );
+	std::string scaleStr( "scale" );
+	Phyx->SetAttr< vec2 >( this, scaleStr, vec2(4.0f, 4.0f) );
+	Phyx->RegisterEntity( new RenderComponent( this, "dpad_backdrop.tga", 16, 16, true, 0 ) );
 	
 	_RegisterForEvent( DPad, this, &DPad::TouchesBegan, TOUCHES_BEGAN );
 	_RegisterForEvent( DPad, this, &DPad::TouchesMoved, TOUCHES_MOVED );
@@ -35,7 +40,6 @@ void DPad::Update(float _delta)
 
 void DPad::Render(void)
 {
-	_pRenderer->DrawTexture(m_thBackDrop, vec2(50, 320 - 50), true, vec2(4.0, 4.0));
 }
 
 bool DPad::TouchesBegan(unsigned _event, BaseEvent* _data)

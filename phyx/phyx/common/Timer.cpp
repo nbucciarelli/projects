@@ -9,7 +9,6 @@
 
 #include "../phyx.h"
 #include "../managers/EventManager.h"
-#include "../managers/TimerManager.h"
 #include "Timer.h"
 
 Timer::Timer(unsigned _event, BaseEvent* _data, float _firstTick, float _tickIncrement):
@@ -36,11 +35,13 @@ void Timer::Update(float _delta)
 		Phyx->SendEvent( m_eEvent, m_pData, 0 );
 		m_fCurrTime = m_fIncrementTime;
 		if ( m_fIncrementTime == 0 )
-			Phyx->RemoveTimer( this );
+			Phyx->RemoveEntity( this );
 	}
 }
 
-
+void Timer::Render()
+{
+}
 
 
 

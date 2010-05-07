@@ -11,8 +11,6 @@
 		7208C2D71124FB5B00E44367 /* BaseComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7208C2D51124FB5B00E44367 /* BaseComponent.cpp */; };
 		7208C2DA1124FBD900E44367 /* MovementComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 7208C2D81124FBD900E44367 /* MovementComponent.h */; };
 		7208C2DB1124FBD900E44367 /* MovementComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7208C2D91124FBD900E44367 /* MovementComponent.cpp */; };
-		7208C2E31124FD4600E44367 /* ComponentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7208C2E11124FD4600E44367 /* ComponentManager.h */; };
-		7208C2E41124FD4600E44367 /* ComponentManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7208C2E21124FD4600E44367 /* ComponentManager.cpp */; };
 		7208C2E71124FD5800E44367 /* BaseManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7208C2E51124FD5800E44367 /* BaseManager.h */; };
 		7208C2E81124FD5800E44367 /* BaseManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7208C2E61124FD5800E44367 /* BaseManager.cpp */; };
 		726B2780112B791B0033D768 /* StateManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 726B277E112B791B0033D768 /* StateManager.h */; };
@@ -35,8 +33,6 @@
 		728E271E111F49D000763E7F /* EntityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 728E26FA111F49D000763E7F /* EntityManager.h */; };
 		728E271F111F49D000763E7F /* GlobalManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 728E26FB111F49D000763E7F /* GlobalManager.cpp */; };
 		728E2720111F49D000763E7F /* GlobalManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 728E26FC111F49D000763E7F /* GlobalManager.h */; };
-		728E2721111F49D000763E7F /* TimerManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 728E26FD111F49D000763E7F /* TimerManager.cpp */; };
-		728E2722111F49D000763E7F /* TimerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 728E26FE111F49D000763E7F /* TimerManager.h */; };
 		728E2725111F49D000763E7F /* rect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 728E2702111F49D000763E7F /* rect.cpp */; };
 		728E2726111F49D000763E7F /* rect.h in Headers */ = {isa = PBXBuildFile; fileRef = 728E2703111F49D000763E7F /* rect.h */; };
 		728E2727111F49D000763E7F /* vec2.h in Headers */ = {isa = PBXBuildFile; fileRef = 728E2704111F49D000763E7F /* vec2.h */; };
@@ -52,6 +48,8 @@
 		728FE4AB11321A2B00C52561 /* EventManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 728FE4A911321A2B00C52561 /* EventManager.h */; };
 		728FE4AC11321A2B00C52561 /* EventManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 728FE4AA11321A2B00C52561 /* EventManager.cpp */; };
 		728FE5291132242800C52561 /* EventIds.h in Headers */ = {isa = PBXBuildFile; fileRef = 728FE5281132242800C52561 /* EventIds.h */; };
+		729FDF15118DE00200A5C8F8 /* RenderComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 729FDF13118DE00200A5C8F8 /* RenderComponent.h */; };
+		729FDF16118DE00200A5C8F8 /* RenderComponent.mm in Sources */ = {isa = PBXBuildFile; fileRef = 729FDF14118DE00200A5C8F8 /* RenderComponent.mm */; };
 		72EEF663112B63C70038073A /* Globals.h in Headers */ = {isa = PBXBuildFile; fileRef = 72EEF662112B63C70038073A /* Globals.h */; };
 		72EEF6F4112B6E550038073A /* phyxCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 72EEF6F2112B6E550038073A /* phyxCommon.h */; };
 		72EEF6F5112B6E550038073A /* phyxCommon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 72EEF6F3112B6E550038073A /* phyxCommon.mm */; };
@@ -67,8 +65,6 @@
 		7208C2D51124FB5B00E44367 /* BaseComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseComponent.cpp; sourceTree = "<group>"; };
 		7208C2D81124FBD900E44367 /* MovementComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovementComponent.h; sourceTree = "<group>"; };
 		7208C2D91124FBD900E44367 /* MovementComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MovementComponent.cpp; sourceTree = "<group>"; };
-		7208C2E11124FD4600E44367 /* ComponentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentManager.h; sourceTree = "<group>"; };
-		7208C2E21124FD4600E44367 /* ComponentManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ComponentManager.cpp; sourceTree = "<group>"; };
 		7208C2E51124FD5800E44367 /* BaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseManager.h; sourceTree = "<group>"; };
 		7208C2E61124FD5800E44367 /* BaseManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseManager.cpp; sourceTree = "<group>"; };
 		726B277E112B791B0033D768 /* StateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateManager.h; sourceTree = "<group>"; };
@@ -92,8 +88,6 @@
 		728E26FA111F49D000763E7F /* EntityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityManager.h; sourceTree = "<group>"; };
 		728E26FB111F49D000763E7F /* GlobalManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GlobalManager.cpp; sourceTree = "<group>"; };
 		728E26FC111F49D000763E7F /* GlobalManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalManager.h; sourceTree = "<group>"; };
-		728E26FD111F49D000763E7F /* TimerManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TimerManager.cpp; sourceTree = "<group>"; };
-		728E26FE111F49D000763E7F /* TimerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerManager.h; sourceTree = "<group>"; };
 		728E2702111F49D000763E7F /* rect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rect.cpp; sourceTree = "<group>"; };
 		728E2703111F49D000763E7F /* rect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rect.h; sourceTree = "<group>"; };
 		728E2704111F49D000763E7F /* vec2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vec2.h; sourceTree = "<group>"; };
@@ -114,6 +108,8 @@
 		728FE4A911321A2B00C52561 /* EventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManager.h; sourceTree = "<group>"; };
 		728FE4AA11321A2B00C52561 /* EventManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventManager.cpp; sourceTree = "<group>"; };
 		728FE5281132242800C52561 /* EventIds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventIds.h; sourceTree = "<group>"; };
+		729FDF13118DE00200A5C8F8 /* RenderComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderComponent.h; sourceTree = "<group>"; };
+		729FDF14118DE00200A5C8F8 /* RenderComponent.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RenderComponent.mm; sourceTree = "<group>"; };
 		72AC914C114409C2009D9CB8 /* pixel.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = pixel.tga; sourceTree = "<group>"; };
 		72AC92BB11446042009D9CB8 /* phyx_documentation.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = phyx_documentation.txt; sourceTree = "<group>"; };
 		72EEF662112B63C70038073A /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
@@ -181,6 +177,8 @@
 				7208C2D51124FB5B00E44367 /* BaseComponent.cpp */,
 				7208C2D81124FBD900E44367 /* MovementComponent.h */,
 				7208C2D91124FBD900E44367 /* MovementComponent.cpp */,
+				729FDF13118DE00200A5C8F8 /* RenderComponent.h */,
+				729FDF14118DE00200A5C8F8 /* RenderComponent.mm */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -233,10 +231,6 @@
 				728E26F9111F49D000763E7F /* EntityManager.cpp */,
 				728E26FC111F49D000763E7F /* GlobalManager.h */,
 				728E26FB111F49D000763E7F /* GlobalManager.cpp */,
-				728E26FE111F49D000763E7F /* TimerManager.h */,
-				728E26FD111F49D000763E7F /* TimerManager.cpp */,
-				7208C2E11124FD4600E44367 /* ComponentManager.h */,
-				7208C2E21124FD4600E44367 /* ComponentManager.cpp */,
 				726B277E112B791B0033D768 /* StateManager.h */,
 				726B277F112B791B0033D768 /* StateManager.cpp */,
 				728FE4A911321A2B00C52561 /* EventManager.h */,
@@ -305,7 +299,6 @@
 				728E2716111F49D000763E7F /* Timer.h in Headers */,
 				728E271E111F49D000763E7F /* EntityManager.h in Headers */,
 				728E2720111F49D000763E7F /* GlobalManager.h in Headers */,
-				728E2722111F49D000763E7F /* TimerManager.h in Headers */,
 				728E2726111F49D000763E7F /* rect.h in Headers */,
 				728E2727111F49D000763E7F /* vec2.h in Headers */,
 				728E272A111F49D000763E7F /* Entity.h in Headers */,
@@ -313,7 +306,6 @@
 				728E272D111F49D000763E7F /* Renderer.h in Headers */,
 				7208C2D61124FB5B00E44367 /* BaseComponent.h in Headers */,
 				7208C2DA1124FBD900E44367 /* MovementComponent.h in Headers */,
-				7208C2E31124FD4600E44367 /* ComponentManager.h in Headers */,
 				7208C2E71124FD5800E44367 /* BaseManager.h in Headers */,
 				72EEF663112B63C70038073A /* Globals.h in Headers */,
 				72EEF6F4112B6E550038073A /* phyxCommon.h in Headers */,
@@ -324,6 +316,7 @@
 				7283E933116F9587008CED12 /* AttributeManager.h in Headers */,
 				72883CD4117AB27A0061F33C /* phyx.h in Headers */,
 				728F8185117BAF7000FF4F08 /* Camera.h in Headers */,
+				729FDF15118DE00200A5C8F8 /* RenderComponent.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,7 +367,6 @@
 				728E2715111F49D000763E7F /* Timer.cpp in Sources */,
 				728E271D111F49D000763E7F /* EntityManager.cpp in Sources */,
 				728E271F111F49D000763E7F /* GlobalManager.cpp in Sources */,
-				728E2721111F49D000763E7F /* TimerManager.cpp in Sources */,
 				728E2725111F49D000763E7F /* rect.cpp in Sources */,
 				728E2728111F49D000763E7F /* vec2.mm in Sources */,
 				728E2729111F49D000763E7F /* Entity.cpp in Sources */,
@@ -382,7 +374,6 @@
 				728E272E111F49D000763E7F /* Renderer.mm in Sources */,
 				7208C2D71124FB5B00E44367 /* BaseComponent.cpp in Sources */,
 				7208C2DB1124FBD900E44367 /* MovementComponent.cpp in Sources */,
-				7208C2E41124FD4600E44367 /* ComponentManager.cpp in Sources */,
 				7208C2E81124FD5800E44367 /* BaseManager.cpp in Sources */,
 				72EEF6F5112B6E550038073A /* phyxCommon.mm in Sources */,
 				726B2781112B791B0033D768 /* StateManager.cpp in Sources */,
@@ -390,6 +381,7 @@
 				7283E934116F9587008CED12 /* AttributeManager.cpp in Sources */,
 				72883CD5117AB27A0061F33C /* phyx.mm in Sources */,
 				728F8186117BAF7000FF4F08 /* Camera.cpp in Sources */,
+				729FDF16118DE00200A5C8F8 /* RenderComponent.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
