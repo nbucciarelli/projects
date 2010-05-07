@@ -529,7 +529,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {205, 887}}</string>
+							<string>{{0, 0}, {205, 660}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -541,14 +541,14 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {222, 905}}</string>
+						<string>{{0, 0}, {222, 678}}</string>
 						<key>GroupTreeTableConfiguration</key>
 						<array>
 							<string>MainColumn</string>
 							<real>205</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>-1640 -157 222 946 -1920 -280 1920 1080 </string>
+						<string>296 59 222 719 0 0 1280 778 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -567,7 +567,7 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>72A92D9B118FAE4E002B25EB</string>
+				<string>72A21C4A1194C8C80012A7B6</string>
 				<string>11E0B1FE06471DED0097A5F4</string>
 			</array>
 			<key>ToolbarConfiguration</key>
@@ -583,7 +583,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>294631897.624264</real>
+	<real>294963400.36694402</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>1</integer>
 	<key>ToolbarIsVisible</key>
@@ -598,16 +598,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C530D57069F1CE1000CFCEE</string>
-		<string>72A92DA6118FAEA6002B25EB</string>
-		<string>72A92DA1118FAE4E002B25EB</string>
 		<string>1C78EAAD065D492600B07095</string>
-		<string>726B2717112B717D0033D768</string>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>726B2717112B717D0033D768</string>
 		<string>/Users/kylerothermel/Documents/Code/nbucciarelli_repository/projects/bullet_hell/bullet_hell.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>-1640 -157 222 946 -1920 -280 1920 1080 </string>
+	<string>296 59 222 719 0 0 1280 778 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -628,7 +625,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DPad.h</string>
+								<string></string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -637,7 +634,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1030, 202}}</string>
 								<key>RubberWindowFrame</key>
-								<string>-1109 -53 1030 718 -1920 -280 1920 1080 </string>
+								<string>228 60 1030 718 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -663,7 +660,7 @@
 								<key>Frame</key>
 								<string>{{0, 207}, {1030, 470}}</string>
 								<key>RubberWindowFrame</key>
-								<string>-1109 -53 1030 718 -1920 -280 1920 1080 </string>
+								<string>228 60 1030 718 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXBuildResultsModule</string>
@@ -686,14 +683,14 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>726B2717112B717D0033D768</string>
-				<string>72A92D98118FAE4D002B25EB</string>
+				<string>72A21C491194C8C70012A7B6</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.buildV3</string>
 			<key>WindowString</key>
-			<string>-1109 -53 1030 718 -1920 -280 1920 1080 </string>
+			<string>228 60 1030 718 0 0 1280 778 </string>
 			<key>WindowToolGUID</key>
 			<string>726B2717112B717D0033D768</string>
 			<key>WindowToolIsVisible</key>
@@ -728,8 +725,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {658, 361}}</string>
-											<string>{{658, 0}, {782, 361}}</string>
+											<string>{{0, 0}, {657, 361}}</string>
+											<string>{{657, 0}, {783, 361}}</string>
 										</array>
 									</dict>
 									<key>VerticalSplitView</key>
@@ -775,15 +772,15 @@
 										<string>Value</string>
 										<real>85</real>
 										<string>Summary</string>
-										<real>552</real>
+										<real>553</real>
 									</array>
 									<key>Frame</key>
-									<string>{{658, 0}, {782, 361}}</string>
+									<string>{{657, 0}, {783, 361}}</string>
 									<key>RubberWindowFrame</key>
-									<string>-1635 -70 1440 718 -1920 -280 1920 1080 </string>
+									<string>-95 58 1440 718 0 0 1280 778 </string>
 								</dict>
 								<key>RubberWindowFrame</key>
-								<string>-1635 -70 1440 718 -1920 -280 1920 1080 </string>
+								<string>-95 58 1440 718 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugSessionModule</string>
@@ -806,18 +803,18 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>72A92D8A118FAE39002B25EB</string>
+				<string>72A21C4B1194C8C80012A7B6</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>72A92D8B118FAE39002B25EB</string>
-				<string>72A92D8C118FAE39002B25EB</string>
-				<string>72A92D8D118FAE39002B25EB</string>
-				<string>72A92D8E118FAE39002B25EB</string>
-				<string>72A92D8F118FAE39002B25EB</string>
+				<string>72A21C4C1194C8C80012A7B6</string>
+				<string>72A21C4D1194C8C80012A7B6</string>
+				<string>72A21C4E1194C8C80012A7B6</string>
+				<string>72A21C4F1194C8C80012A7B6</string>
+				<string>72A21C501194C8C80012A7B6</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
 			<key>WindowString</key>
-			<string>-1635 -70 1440 718 -1920 -280 1920 1080 </string>
+			<string>-95 58 1440 718 0 0 1280 778 </string>
 			<key>WindowToolGUID</key>
 			<string>1CD10A99069EF8BA00B06720</string>
 			<key>WindowToolIsVisible</key>
@@ -966,7 +963,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>72A92D9F118FAE4E002B25EB</string>
+				<string>72A21C511194C8C80012A7B6</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
