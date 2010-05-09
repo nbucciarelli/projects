@@ -221,7 +221,7 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>7287D10911972E370023D3CC</string>
+				<string>7287D164119749030023D3CC</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>DPad.mm</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
@@ -229,16 +229,26 @@
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>7287D10A11972E370023D3CC</string>
+						<string>7287D165119749030023D3CC</string>
 						<key>PBXProjectModuleLabel</key>
 						<string>DPad.mm</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>7287D12E11972ECE0023D3CC</string>
+						<string>7287D1A611974CBB0023D3CC</string>
 						<key>history</key>
 						<array>
-							<string>7287D0F511972E060023D3CC</string>
+							<string>7287D1A211974CBB0023D3CC</string>
+							<string>7287D1A311974CBB0023D3CC</string>
+						</array>
+						<key>prevStack</key>
+						<array>
+							<string>7287D168119749030023D3CC</string>
+							<string>7287D169119749030023D3CC</string>
+							<string>7287D1741197496D0023D3CC</string>
+							<string>7287D1751197496D0023D3CC</string>
+							<string>7287D1A411974CBB0023D3CC</string>
+							<string>7287D1A511974CBB0023D3CC</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -254,31 +264,31 @@
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>245 47 862 718 0 0 1280 778 </string>
+				<string>130 52 862 718 0 0 1280 778 </string>
 			</dict>
 		</dict>
 		<dict>
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>7287D10C11972E370023D3CC</string>
+				<string>7287D16B119749030023D3CC</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>Game.mm</string>
+				<string>EventIds.h</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>7287D10D11972E370023D3CC</string>
+						<string>7287D16C119749030023D3CC</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>Game.mm</string>
+						<string>EventIds.h</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>7287D12F11972ECE0023D3CC</string>
+						<string>7287D1A711974CBB0023D3CC</string>
 						<key>history</key>
 						<array>
-							<string>7287D0F411972DFE0023D3CC</string>
+							<string>7287D13E119742080023D3CC</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -290,11 +300,11 @@
 			<key>Geometry</key>
 			<dict>
 				<key>Frame</key>
-				<string>{{0, 20}, {862, 677}}</string>
+				<string>{{0, 20}, {668, 637}}</string>
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>359 60 862 718 0 0 1280 778 </string>
+				<string>38 74 668 678 0 0 1280 778 </string>
 			</dict>
 		</dict>
 	</array>
@@ -603,8 +613,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>21</integer>
-									<integer>15</integer>
+									<integer>6</integer>
+									<integer>5</integer>
 									<integer>4</integer>
 									<integer>0</integer>
 								</array>
@@ -664,7 +674,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>295120590.43276298</real>
+	<real>295128251.868007</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>1</integer>
 	<key>ToolbarIsVisible</key>
@@ -684,9 +694,9 @@
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>726B2717112B717D0033D768</string>
-		<string>7287D10C11972E370023D3CC</string>
+		<string>7287D16B119749030023D3CC</string>
 		<string>/Users/kylerothermel/Documents/Code/nbucciarelli_repository/projects/bullet_hell/bullet_hell.xcodeproj</string>
-		<string>7287D10911972E370023D3CC</string>
+		<string>7287D164119749030023D3CC</string>
 	</array>
 	<key>WindowString</key>
 	<string>12 59 222 719 0 0 1280 778 </string>
@@ -710,7 +720,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>EntityManager.cpp</string>
+								<string>DPad.mm</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>

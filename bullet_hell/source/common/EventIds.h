@@ -14,7 +14,8 @@
 
 enum GAME_EVENTID
 {
-	FIRST_GAME_EVENT = LAST_ENGINE_EVENT + 1
+	FIRST_GAME_EVENT = LAST_ENGINE_EVENT + 1,
+	DPAD_MOVED										// Passed with a vec2 for direction
 };
 
 #endif

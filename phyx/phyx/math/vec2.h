@@ -8,6 +8,8 @@
  */
 #ifndef VEC_2_
 #define VEC_2_
+
+class rect;
  
 struct vec2
 {
@@ -72,6 +74,22 @@ struct vec2
 	 *	Return:		The angle in radians.
 	 *********************************/
 	float angleBetween(const vec2& _v) const;
+	
+	/*********************************
+	 *	Function:	inRect
+	 *	Created:	[KR] May 9, 2010
+	 *	Purpose:	Determine if a vec2 is in a rect.
+	 *	Return:		true if inside rect false otherwise.
+	 *********************************/
+	bool inRect(const rect* _r) const;
+	
+	/*********************************
+	 *	Function:	angleBetween
+	 *	Created:	[KR] May 9, 2010
+	 *	Purpose:	Determine if a vec2 is in a circle.
+	 *	Return:		true if inside circle, false otherwise.
+	 *********************************/
+	bool inCircle(const vec2& _center, float _radius) const;
 	
 	/*********************************
 	 *	Function:	equals

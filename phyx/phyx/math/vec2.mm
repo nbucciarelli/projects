@@ -13,6 +13,7 @@
 #include <stdlib.h>
 
 #include "PhyxMath.h"
+#include "rect.h"
 
 /*	Public Functions	*/
 float vec2::magnitude() const
@@ -63,6 +64,20 @@ float vec2::angleBetween(const vec2& _v) const
 		rads = (2 * _PI) + (rads * -1.0f);
 	
 	return rads;
+}
+
+bool vec2::inRect(const rect* _r) const
+{
+	if ( x < _r->right && x > _r->left && y < _r->bottom && y > _r->top )
+		return true;
+	return false;
+}
+
+bool vec2::inCircle(const vec2& _center, float _radius) const
+{
+	if ( (*this - _center).magnitudeSquared() < _radius * _radius )
+		return true;
+	return false;
 }
 
 bool vec2::equals(const vec2& _v, float _tolerence) const

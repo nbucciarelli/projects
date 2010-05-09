@@ -24,6 +24,7 @@ protected:
 	
 private:
 	/*	Private Data Members	*/
+	bool	m_bSelected;
 	
 public:
 	/*	Public Functions		*/
