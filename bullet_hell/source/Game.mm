@@ -11,13 +11,9 @@
 
 // Managers
 #include "phyx/phyx.h"
-#include "phyx/managers/EntityManager.h"
 
 #include "states/MenuState.h"
-#include "common/Globals.h"
-
-// Objects
-#include "objects/DPad.h"
+#include "states/GamePlayState.h"
 
 Game Game::sm_Instance;
 
@@ -31,7 +27,7 @@ Game::~Game()
 
 void Game::Init()
 {
-	Phyx->Add( new DPad(), OP_UPDATE );
+	Phyx->ChangeState( new GamePlayState() );
 }
 
 void Game::Shutdown()

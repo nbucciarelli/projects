@@ -18,6 +18,7 @@
 EntityManager::EntityManager() :
 	BaseManager()
 {
+	m_lUpdateLists.push_back( std::list< unsigned >() );
 }
 
 EntityManager::~EntityManager()
