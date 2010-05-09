@@ -24,7 +24,3 @@ PhyxObject::~PhyxObject()
 void PhyxObject::Update( float _delta )
 {
 }
-
-void PhyxObject::Render()
-{
-}

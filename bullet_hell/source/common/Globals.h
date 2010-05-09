@@ -10,5 +10,13 @@
 #ifndef GLOBALS_H_
 #define GLOBALS_H_
 
+enum OBJECT_PRIORITYS
+{
+	OP_UPDATE,
+	OP_BACKGROUND,
+	OP_DECORATION,
+	OP_OBJECT,
+	OP_UI
+};
 
 #endif

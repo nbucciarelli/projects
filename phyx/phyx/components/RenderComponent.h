@@ -29,7 +29,6 @@ private:
 	
 	TextureHandle	m_thTextureHandle;
 	bool			m_bDrawCentered;
-	unsigned		m_uPriority;
 	
 public:
 	/*	Public Functions		*/
@@ -37,7 +36,7 @@ public:
 	/**********************************
 	 *	Function:	Constructor
 	 **********************************/
-	RenderComponent(Entity* _controlledEntity, const char* _textureName, short _texWidth, short _texHeight, bool _drawCentered, unsigned _priority);
+	RenderComponent(Entity* _controlledEntity, const char* _textureName, short _texWidth, short _texHeight, bool _drawCentered);
 	
 	/**********************************
 	 *	Function:	Destructor
@@ -48,11 +47,6 @@ public:
 	 *	Function:	Update
 	 **********************************/
 	void Update(float _delta);
-	
-	/**********************************
-	 *	Function:	Render
-	 **********************************/
-	void Render();
 	
 protected:
 	/*	Protected Functions		*/

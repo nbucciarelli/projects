@@ -14,6 +14,7 @@
 #include "phyx/managers/EntityManager.h"
 
 #include "states/MenuState.h"
+#include "common/Globals.h"
 
 // Objects
 #include "objects/DPad.h"
@@ -30,7 +31,7 @@ Game::~Game()
 
 void Game::Init()
 {
-	Phyx->RegisterEntity( new DPad() );
+	Phyx->Add( new DPad(), OP_UPDATE );
 }
 
 void Game::Shutdown()

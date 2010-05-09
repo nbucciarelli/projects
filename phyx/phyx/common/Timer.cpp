@@ -35,7 +35,7 @@ void Timer::Update(float _delta)
 		Phyx->SendEvent( m_eEvent, m_pData, 0 );
 		m_fCurrTime = m_fIncrementTime;
 		if ( m_fIncrementTime == 0 )
-			Phyx->RemoveEntity( this );
+			Phyx->Remove( this );
 	}
 }
 

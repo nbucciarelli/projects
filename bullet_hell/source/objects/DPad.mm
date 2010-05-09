@@ -14,6 +14,8 @@
 #include "phyx/math/vec2.h"
 #include "phyx/phyx.h"
 
+#include "../common/Globals.h"
+
 
 DPad::DPad() :
 	Entity()
@@ -22,16 +24,16 @@ DPad::DPad() :
 	m_vPosition = vec2( 50.0f, 320.0f - 50.0f );
 	std::string scaleStr( "scale" );
 	Phyx->SetAttr< vec2 >( this, scaleStr, vec2(4.0f, 4.0f) );
-	Phyx->RegisterEntity( new RenderComponent( this, "dpad_backdrop.tga", 16, 16, true, 0 ) );
+	Phyx->Add( new RenderComponent( this, "dpad_backdrop.tga", 16, 16, true ), OP_UI );
 	
-	_RegisterForEvent( DPad, this, &DPad::TouchesBegan, TOUCHES_BEGAN );
-	_RegisterForEvent( DPad, this, &DPad::TouchesMoved, TOUCHES_MOVED );
-	_RegisterForEvent( DPad, this, &DPad::TouchesEnded, TOUCHES_ENDED );
+	Phyx->RegisterForEvent(TOUCHES_BEGAN, _NewEventFunctor(DPad, this, &DPad::TouchesBegan));
+	Phyx->RegisterForEvent(TOUCHES_MOVED, _NewEventFunctor(DPad, this, &DPad::TouchesMoved));
+	Phyx->RegisterForEvent(TOUCHES_ENDED, _NewEventFunctor(DPad, this, &DPad::TouchesEnded));
 }
 
 DPad::~DPad()
 {
-	_UnregisterForEvent( this );
+	Phyx->UnregisterForEvent( this );
 }
 
 void DPad::Update(float _delta)

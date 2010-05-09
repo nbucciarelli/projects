@@ -33,9 +33,14 @@ PhyxObject* EntityManager::operator[](unsigned _id)
 	return m_mEntities[_id]; 
 }
 
-void EntityManager::RegisterEntity(PhyxObject* _object)
+void EntityManager::RegisterEntity(PhyxObject* _object, unsigned _priority)
 {
 	m_mEntities[ _object->GetID() ] = _object;
+	
+	while( m_lUpdateLists.size() <= _priority )
+		m_lUpdateLists.push_back( std::list< unsigned >() );
+	
+	m_lUpdateLists[ _priority ].push_back( _object->GetID() );
 }
 
 void EntityManager::RemoveEntity(PhyxObject* _object)
@@ -47,17 +52,20 @@ void EntityManager::RemoveEntity(PhyxObject* _object)
 
 void EntityManager::Update(float _delta)
 {
-	for (std::map< unsigned, PhyxObject* >::iterator iter = m_mEntities.begin(); iter != m_mEntities.end(); ++iter)
+	for (std::list< unsigned >::iterator iter = m_lUpdateLists[0].begin(); iter != m_lUpdateLists[0].end(); ++iter)
 	{
-		(*iter).second->Update( _delta );
+		m_mEntities[ *iter ]->Update( _delta );
 	}
 }
 
-void EntityManager::Render()
+void EntityManager::Render(float _delta)
 {
-	for (std::map< unsigned, PhyxObject* >::iterator iter = m_mEntities.begin(); iter != m_mEntities.end(); ++iter)
+	for (std::vector< std::list< unsigned > >::iterator listIter = (++m_lUpdateLists.begin()); listIter != m_lUpdateLists.end(); ++listIter)
 	{
-		(*iter).second->Render();
+		for (std::list< unsigned >::iterator iter = (*listIter).begin(); iter != (*listIter).end(); ++iter)
+		{
+			m_mEntities[ *iter ]->Update( _delta );
+		}
 	}
 }
 

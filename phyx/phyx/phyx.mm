@@ -31,6 +31,7 @@ phyx::~phyx()
 void phyx::Initialize()
 {
 	m_fTimeSinceLaunch = 0.0f;
+	m_prevTime = m_currTime = CFAbsoluteTimeGetCurrent();
 	
 	m_pEntityManager = new EntityManager();
 	m_pStateManager = new StateManager();
@@ -51,6 +52,7 @@ void phyx::Shutdown()
 
 void phyx::PreUpdate()
 {
+	m_prevTime = m_currTime;
 	m_currTime = CFAbsoluteTimeGetCurrent();
 }
 
@@ -66,8 +68,6 @@ void phyx::Update()
 void phyx::PostUpdate()
 {
 	m_pEventManager->ProcessEvents();
-	
-	m_prevTime = m_currTime;
 }
 
 void phyx::PreRender()
@@ -78,7 +78,7 @@ void phyx::PreRender()
 void phyx::Render()
 {
 	m_pStateManager->Render();
-	m_pEntityManager->Render();
+	m_pEntityManager->Render( GetDelta() );
 }
 
 void phyx::PostRender()
@@ -86,27 +86,27 @@ void phyx::PostRender()
 	_pRenderer->End();
 }
 
-void phyx::RegisterEntity( PhyxObject* _object )
+void phyx::Add( PhyxObject* _object, unsigned _priority )
 {
-	m_pEntityManager->RegisterEntity( _object );
+	m_pEntityManager->RegisterEntity( _object, _priority );
 }
 
-void phyx::RemoveEntity(PhyxObject* _object)
+void phyx::Remove(PhyxObject* _object)
 {
 	m_pEntityManager->RemoveEntity( _object );
 }
 
-void phyx::RegisterClient(unsigned _id, BaseFunctor* _functor)
+void phyx::RegisterForEvent(unsigned _id, BaseFunctor* _functor)
 {
 	m_pEventManager->RegisterClient( _id, _functor );
 }
 
-void phyx::UnregisterClient(PhyxObject* _object)
+void phyx::UnregisterForEvent(PhyxObject* _object)
 {
 	m_pEventManager->UnregisterClient( _object );
 }
 
-void phyx::UnregisterClient(PhyxObject* _object, unsigned _id)
+void phyx::UnregisterForEvent(PhyxObject* _object, unsigned _id)
 {
 	m_pEventManager->UnregisterClient( _object, _id );
 }

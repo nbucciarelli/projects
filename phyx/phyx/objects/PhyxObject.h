@@ -42,12 +42,6 @@ public:
 	virtual void Update(float _delta) = 0;
 	
 	/**********************************
-	 *	Function:	Render
-	 *	TODO: Rendering should all be handled by the renderer.
-	 **********************************/
-	virtual void Render();
-	
-	/**********************************
 	 *	Function:	Accessors
 	 **********************************/
 	inline unsigned GetID()		{ return m_id; }

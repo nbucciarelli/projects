@@ -12,6 +12,8 @@
 #define EntityManager_H_
 
 #include <map>
+#include <list>
+#include <vector>
 
 class PhyxObject;
 
@@ -28,6 +30,7 @@ protected:
 private:
 	/*	Private Data Members	*/
 	std::map< unsigned, PhyxObject* > m_mEntities;
+	std::vector< std::list< unsigned > > m_lUpdateLists;
 	
 public:
 	/*	Public Functions		*/
@@ -59,7 +62,7 @@ private:
 	 *	Function:	RegisterEntity
 	 *	Purpose:	Add a new entity to the manager
 	 **********************************/
-	void RegisterEntity(PhyxObject* _object);
+	void RegisterEntity(PhyxObject* _object, unsigned _priority);
 	
 	/**********************************
 	 *	Function:	RemoveEntity
@@ -77,7 +80,7 @@ private:
 	 *	Function:	Render
 	 *	Purpose:	Render all entities
 	 **********************************/
-	void Render();
+	void Render(float _delta);
 };
 
 

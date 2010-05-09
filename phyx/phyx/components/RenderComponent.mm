@@ -13,10 +13,9 @@
 #include "../phyx.h"
 #include "../objects/Entity.h"
 
-RenderComponent::RenderComponent(Entity* _controlledEntity, const char* _textureName, short _texWidth, short _texHeight, bool _drawCentered, unsigned _priority) :
+RenderComponent::RenderComponent(Entity* _controlledEntity, const char* _textureName, short _texWidth, short _texHeight, bool _drawCentered) :
 	BaseComponent( _controlledEntity ),
-	m_bDrawCentered( _drawCentered ),
-	m_uPriority( _priority )
+	m_bDrawCentered( _drawCentered )
 {
 	m_thTextureHandle = _pRenderer->LoadTexture( _textureName, _texWidth, _texHeight);
 }
@@ -26,10 +25,6 @@ RenderComponent::~RenderComponent()
 }
 
 void RenderComponent::Update( float _delta )
-{
-}
-
-void RenderComponent::Render()
 {
 	std::string scaleStr("scale");
 	std::string rotMagnitudeStr("rotMagnitude");
@@ -60,7 +55,6 @@ void RenderComponent::Render()
 							(alpha != NULL) ? *alpha : 1.0f
 							);
 }
-
 
 
 

@@ -44,11 +44,6 @@ public:
 	 **********************************/
 	virtual void Update(float _delta) = 0;
 	
-	/**********************************
-	 *	Function:	Render
-	 **********************************/
-	virtual void Render() = 0;
-	
 protected:
 	/*	Protected Functions		*/
 	

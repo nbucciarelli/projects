@@ -26,9 +26,7 @@ class BaseState;
 class PhyxObject;
 class BaseFunctor;
 
-#define _RegisterForEvent(_type, _obj, _func, _event) Phyx->RegisterClient( (_event), new EventFunctor< _type >( (_obj), (_func) ) )
-#define _UnregisterForEvent(_obj) Phyx->UnregisterClient( (_obj) )
-#define _UnregisterForSingleEvent(_obj, _id) Phyx->UnregisterClient( (_obj), (_id) )
+#define _NewEventFunctor(_type, _obj, _func) new EventFunctor< _type >( (_obj), (_func) )
 
 class phyx
 {
@@ -126,13 +124,13 @@ public:
 	 *	Function:	RegisterEntity
 	 *	Purpose:	Register a new entity
 	 **********************************/
-	void RegisterEntity(PhyxObject* _object);
+	void Add(PhyxObject* _object, unsigned _priority);
 	
 	/**********************************
 	 *	Function:	RemoveEntity
 	 *	Purpose:	Register a new entity
 	 **********************************/
-	void RemoveEntity(PhyxObject* _object);
+	void Remove(PhyxObject* _object);
 	
 	/*
 	 *	Event Manager forwards
@@ -142,19 +140,19 @@ public:
 	 *	Function:	RegisterClient
 	 *	Purpose:	Forward a request for a new event to the event manager.
 	 **********************************/
-	void RegisterClient(unsigned _id, BaseFunctor* _functor);
+	void RegisterForEvent(unsigned _id, BaseFunctor* _functor);
 	
 	/**********************************
 	 *	Function:	SendEvent
 	 *	Purpose:	Forward a request for a new event to the event manager.
 	 **********************************/
-	void UnregisterClient(PhyxObject* _object);
+	void UnregisterForEvent(PhyxObject* _object);
 	
 	/**********************************
 	 *	Function:	SendEvent
 	 *	Purpose:	Forward a request for a new event to the event manager.
 	 **********************************/
-	void UnregisterClient(PhyxObject* _object, unsigned _id);
+	void UnregisterForEvent(PhyxObject* _object, unsigned _id);
 	
 	/**********************************
 	 *	Function:	SendEvent

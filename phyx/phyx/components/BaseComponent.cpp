@@ -21,7 +21,3 @@ BaseComponent::~BaseComponent()
 void BaseComponent::Update(float _delta)
 {
 }
-
-void BaseComponent::Render()
-{
-}
