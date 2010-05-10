@@ -10,6 +10,8 @@
 #ifndef Avatar_H_
 #define Avatar_H_
 
+class BaseEvent;
+
 #include "phyx/objects/Entity.h"
 class Avatar : public Entity
 {

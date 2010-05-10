@@ -15,6 +15,7 @@
 
 // Objects
 #include "../objects/DPad.h"
+#include "../objects/Avatar.h"
 
 GamePlayState::GamePlayState()
 {
@@ -27,6 +28,7 @@ GamePlayState::~GamePlayState()
 void GamePlayState::Enter()
 {
 	Phyx->Add( new DPad(), OP_UPDATE );
+	Phyx->Add( new Avatar(), OP_UPDATE );
 }
 
 void GamePlayState::Exit()

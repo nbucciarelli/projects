@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0165E5731198B44500E7AB8C /* tempavatar.tga in Resources */ = {isa = PBXBuildFile; fileRef = 0165E5721198B44500E7AB8C /* tempavatar.tga */; };
 		01DA892F118B7A0F0060C5B6 /* MenuState.mm in Sources */ = {isa = PBXBuildFile; fileRef = 01DA892E118B7A0F0060C5B6 /* MenuState.mm */; };
 		1D3623260D0F684500981E51 /* bullet_hellAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* bullet_hellAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0165E5721198B44500E7AB8C /* tempavatar.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = tempavatar.tga; sourceTree = "<group>"; };
 		01DA892E118B7A0F0060C5B6 /* MenuState.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MenuState.mm; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* bullet_hellAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bullet_hellAppDelegate.h; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 		72AC9127114408FA009D9CB8 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				0165E5721198B44500E7AB8C /* tempavatar.tga */,
 				72AC91D211441B64009D9CB8 /* dpad_backdrop.tga */,
 			);
 			path = assets;
@@ -296,6 +299,7 @@
 				72FA61A2112BAAC30079366F /* class template.rtf in Resources */,
 				72AC91D311441B64009D9CB8 /* dpad_backdrop.tga in Resources */,
 				72AC92BD1144609B009D9CB8 /* phyx_documentation.txt in Resources */,
+				0165E5731198B44500E7AB8C /* tempavatar.tga in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
