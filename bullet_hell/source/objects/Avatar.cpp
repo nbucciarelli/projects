@@ -32,7 +32,7 @@ Avatar::~Avatar()
 
 void Avatar::Update(float _delta)
 {
-	m_vPosition = vec2( 50.0f, 50.0f );
+	
 }
 
 

@@ -17,6 +17,9 @@
 #include "../common/Globals.h"
 #include "../common/EventIds.h"
 
+#include <iostream>
+using namespace std;
+
 #define MAX_DISTANCE 32
 #define HOME_POSITION vec2( 50.0f, 320.0f - 50.0f )
 
@@ -33,6 +36,7 @@ DPad::DPad() :
 	Phyx->RegisterForEvent( TOUCHES_BEGAN, _NewEventFunctor( DPad, this, &DPad::TouchesBegan ) );
 	Phyx->RegisterForEvent( TOUCHES_MOVED, _NewEventFunctor( DPad, this, &DPad::TouchesMoved ) );
 	Phyx->RegisterForEvent( TOUCHES_ENDED, _NewEventFunctor( DPad, this, &DPad::TouchesEnded ) );
+	
 }
 
 DPad::~DPad()
@@ -81,6 +85,7 @@ bool DPad::TouchesMoved(unsigned _event, BaseEvent* _data)
 		if ( (m_vPosition - HOME_POSITION).magnitudeSquared() > MAX_DISTANCE * MAX_DISTANCE )
 		{
 			m_vPosition = HOME_POSITION + (m_vPosition - HOME_POSITION).normalize() * MAX_DISTANCE;
+			
 		}
 		
 	}
