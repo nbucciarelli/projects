@@ -43,9 +43,8 @@ void GamePlayState::Exit()
 void GamePlayState::Update(float _delta)
 {
 	vec2 temp;
-	temp = m_Avatar->GetPosition() + (m_DPad->GetPosition() - HOME_POSITION);
-	m_Avatar->SetPosition(temp);
-	
+	temp = m_Avatar->GetPosition() + ((m_DPad->GetPosition() - HOME_POSITION) / 3);
+	m_Avatar->SetPosition(temp);	
 }
 
 void GamePlayState::Render()
