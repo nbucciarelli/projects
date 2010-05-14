@@ -19,7 +19,7 @@
 
 Avatar::Avatar() : Entity()
 {
-	m_vPosition = vec2( 50.0f, 50.0f );
+	m_vPosition = vec2( 240.0f, 160.0f );
 	std::string scaleStr( "scale" );
 	Phyx->SetAttr< vec2 >( this, scaleStr, vec2( 4.0f, 4.0f ) );
 	Phyx->Add( new RenderComponent( this, "tempavatar.tga", 16, 16, true ), OP_UI );
@@ -32,7 +32,18 @@ Avatar::~Avatar()
 
 void Avatar::Update(float _delta)
 {
+	// These numbers will be changed when the avatar changes. - JH
+	if(m_vPosition.x <= 25.0f)
+		m_vPosition.x = 25.0f;
 	
+	if(m_vPosition.x >= 455.0f)
+		m_vPosition.x = 455.0f;
+	
+	if(m_vPosition.y <= 25.0f)
+		m_vPosition.y = 25.0f;
+
+	if(m_vPosition.y >= 295.0f)
+		m_vPosition.y = 295.0f;
 }
 
 
