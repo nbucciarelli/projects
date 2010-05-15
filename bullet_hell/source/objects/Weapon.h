@@ -11,6 +11,8 @@
 
 #include "phyx/objects/Entity.h"
 
+enum eWeaponType { PISTOL, SHOTGUN, BURST_RIFLE, AUTO_RIFLE };
+
 class Weapon : public Entity
 {
 public:
@@ -21,7 +23,8 @@ protected:
 	
 private:
 	/*	Private Data Members	*/
-	float m_fLifetime;
+	int m_nType;
+	float m_fROF;
 	
 public:
 	/*	Public Functions		*/
@@ -44,7 +47,8 @@ public:
 	/**********************************
 	 *	Function:	Accessors
 	 **********************************/
-	float GetLifeTime(void) { return m_fLifetime; }
+	int GetType(void) { return m_nType; }
+	float GetROF(void) { return m_fROF; }
 	
 protected:
 	/*	Protected Functions		*/
@@ -54,7 +58,8 @@ private:
 	/**********************************
 	 *	Function:	Mutators
 	 **********************************/
-	void SetLifeTime(float fLifeTime) { m_fLifetime = fLifeTime; }
+	void SetType(int nType) { m_nType = nType; }
+	void SetROF(float fROF) { m_fROF = fROF; }
 };
 
 #endif
