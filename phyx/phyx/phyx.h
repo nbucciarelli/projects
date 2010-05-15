@@ -15,6 +15,7 @@
 #include <string>
 
 #include "managers/AttributeManager.h"
+#include "common/Globals.h"
 
 class EntityManager;
 class StateManager;
@@ -121,13 +122,13 @@ public:
 	 */
 	
 	/**********************************
-	 *	Function:	RegisterEntity
+	 *	Function:	Add
 	 *	Purpose:	Register a new entity
 	 **********************************/
 	void Add(PhyxObject* _object, unsigned _priority);
 	
 	/**********************************
-	 *	Function:	RemoveEntity
+	 *	Function:	Remove
 	 *	Purpose:	Register a new entity
 	 **********************************/
 	void Remove(PhyxObject* _object);
@@ -137,10 +138,14 @@ public:
 	 */
 	
 	/**********************************
-	 *	Function:	RegisterClient
+	 *	Function:	RegisterForEvent
 	 *	Purpose:	Forward a request for a new event to the event manager.
+	 *	Params:
+	 *		_id:		These should probably be defined in an enum somewhere to ensure not using the same number twice
+	 *		_functor:	Functor pointing to the callback
+	 *		_priority:	EP_LOW, EP_MEDIUM, EP_HIGH
 	 **********************************/
-	void RegisterForEvent(unsigned _id, BaseFunctor* _functor);
+	void RegisterForEvent(unsigned _id, BaseFunctor* _functor, EVENT_PRIORITY _priority);
 	
 	/**********************************
 	 *	Function:	SendEvent
@@ -159,6 +164,12 @@ public:
 	 *	Purpose:	Forward a request for a new event to the event manager.
 	 **********************************/
 	void SendEvent(unsigned _id, BaseEvent* _data = NULL, short _frameDelay = 0);
+	
+	/**********************************
+	 *	Function:	SendSynchronousEvent
+	 *	Purpose:	Forward a request for a new event to the event manager.
+	 **********************************/
+	void SendSynchronousEvent(unsigned _id, BaseEvent* _data = NULL);
 	
 	/*
 	 *	State manager forwards

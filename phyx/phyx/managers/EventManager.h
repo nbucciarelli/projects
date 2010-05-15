@@ -11,9 +11,11 @@
 #define EVENTMANAGER_H_
 
 #include <utility>
+#include <vector>
+#include <map>
 #include <list>
 
-
+#include "../common/Globals.h"
 #include "../common/Functors.h"
 #include "../common/EventIds.h"
 #include "../math/vec2.h"
@@ -23,7 +25,7 @@ class PhyxObject;
 class BaseEvent
 {
 public:
-	BaseEvent()			{ }
+	BaseEvent()				{ }
 	virtual ~BaseEvent()	{ }
 };
 
@@ -36,7 +38,7 @@ public:
 	
 	Vec2Event(const vec2& _v)					: data(_v)		{ }
 	Vec2Event(const float _x, const float _y)	: data(_x, _y)	{ }
-	~Vec2Event() {}
+	~Vec2Event()												{ }
 };
 
 
@@ -59,11 +61,14 @@ protected:
 	
 private:
 	/*	Private Data Members	*/
-	typedef	std::list< std::pair< unsigned, std::list< BaseFunctor* > > >	ClientDatabase;
+	typedef std::list< BaseFunctor* >						ListenerList;
+	typedef std::vector< ListenerList >						PrioritizedListenerList;
+	typedef std::map< unsigned, PrioritizedListenerList >	ClientDatabase;
+	typedef std::pair< unsigned, BaseEvent* >				EventDataPair;
 	
-	ClientDatabase									m_ClientDatabase;
-	std::list< pendingEvent >						m_QueedEvents;
-	std::list< std::pair< unsigned, BaseEvent* > >	m_CurrentEvents;
+	ClientDatabase											m_ClientDatabase;
+	std::list< pendingEvent >								m_QueedEvents;
+	std::list< EventDataPair >								m_CurrentEvents;
 	
 public:
 	/*	Public Functions		*/
@@ -72,7 +77,7 @@ public:
 	 *	Function:	RegisterClient
 	 *	Purpose:	Register a functor with an event
 	 **********************************/
-	void RegisterClient(unsigned _id, BaseFunctor* _functor);
+	void RegisterClient(unsigned _id, BaseFunctor* _functor, EVENT_PRIORITY _priority);
 	
 	/**********************************
 	 *	Function:	UnregisterClient
@@ -107,6 +112,21 @@ protected:
 	
 private:
 	/*	Private Functions		*/
+	
+	/**********************************
+	 *	Function:	InsertPrioritizedListener
+	 **********************************/
+	void InsertPrioritizedListener(PrioritizedListenerList& _prioritizedListenerList, BaseFunctor* _functor, EVENT_PRIORITY _priority);
+	
+	/**********************************
+	 *	Function:	InsertPrioritizedListener
+	 **********************************/
+	void RemovePrioritizedListener(PrioritizedListenerList& _prioritizedListenerList, PhyxObject* _object);
+	
+	/**********************************
+	 *	Function:	DispatchEvent
+	 **********************************/
+	void DispatchEvent( EventDataPair& _event );
 	
 	/**********************************
 	 *	Function:	Constructor

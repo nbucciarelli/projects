@@ -27,4 +27,11 @@ typedef int SoundHandle;
 #define SCREEN_HEIGHT 320
 #endif
 
+enum EVENT_PRIORITY
+{
+	EP_LOW,
+	EP_MEDIUM,
+	EP_HIGH
+};
+
 #endif

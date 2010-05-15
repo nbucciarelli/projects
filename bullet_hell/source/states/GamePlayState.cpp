@@ -29,6 +29,9 @@ GamePlayState::~GamePlayState()
 
 void GamePlayState::Enter()
 {
+	// I'd avoid GamePlayState storing avatar and dpad if i were you guys.
+	// the DPad already throws a DPAD_MOVED event with a vector
+	// this vector is scaled by the magnitude of the dpad and in the direction its aiming
 	m_Avatar = new Avatar();
 	m_DPad = new DPad();
 	Phyx->Add( m_DPad, OP_UPDATE );

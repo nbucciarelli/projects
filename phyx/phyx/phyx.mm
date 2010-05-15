@@ -96,9 +96,9 @@ void phyx::Remove(PhyxObject* _object)
 	m_pEntityManager->RemoveEntity( _object );
 }
 
-void phyx::RegisterForEvent(unsigned _id, BaseFunctor* _functor)
+void phyx::RegisterForEvent(unsigned _id, BaseFunctor* _functor, EVENT_PRIORITY _priority)
 {
-	m_pEventManager->RegisterClient( _id, _functor );
+	m_pEventManager->RegisterClient( _id, _functor, _priority );
 }
 
 void phyx::UnregisterForEvent(PhyxObject* _object)
@@ -114,6 +114,11 @@ void phyx::UnregisterForEvent(PhyxObject* _object, unsigned _id)
 void phyx::SendEvent(unsigned _id, BaseEvent* _data, short _frameDelay)
 {
 	m_pEventManager->SendEvent(_id, _data, _frameDelay);
+}
+
+void phyx::SendSynchronousEvent(unsigned _id, BaseEvent* _data)
+{
+	m_pEventManager->SendEvent(_id, _data, -1);
 }
 
 void phyx::ChangeState(BaseState* _state)

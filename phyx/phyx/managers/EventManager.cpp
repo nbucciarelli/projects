@@ -10,6 +10,7 @@
 #include "EventManager.h"
 
 #include "../objects/PhyxObject.h"
+#include "../common/Logger.h"
 
 
 EventManager::EventManager()
@@ -20,62 +21,61 @@ EventManager::~EventManager()
 {
 }
 
-void EventManager::RegisterClient(unsigned _id, BaseFunctor* _functor)
+void EventManager::RegisterClient(unsigned _id, BaseFunctor* _functor, EVENT_PRIORITY _priority)
 {
 	// Go through the list of event lists
-	for (ClientDatabase::iterator iter = m_ClientDatabase.begin(); iter != m_ClientDatabase.end(); ++iter)
+	InsertPrioritizedListener( m_ClientDatabase[ _id ], _functor, _priority );
+}
+
+void EventManager::InsertPrioritizedListener(PrioritizedListenerList& _prioritizedListenerList, BaseFunctor* _functor, EVENT_PRIORITY _priority)
+{
+	while ( _prioritizedListenerList.size() <= _priority )
 	{
-		// if this is the event we're adding the functor too then add it to the list
-		if ((*iter).first == _id)
+		_prioritizedListenerList.push_back( ListenerList() );
+	}
+	_prioritizedListenerList[ (unsigned)_priority ].push_back( _functor );
+}
+
+void EventManager::RemovePrioritizedListener(PrioritizedListenerList& _prioritizedListenerList, PhyxObject* _object)
+{
+	for (PrioritizedListenerList::iterator plliter = _prioritizedListenerList.begin(); plliter != _prioritizedListenerList.end(); ++plliter)
+	{
+		for (ListenerList::iterator lliter = (*plliter).begin(); lliter != (*plliter).end(); ++plliter)
 		{
-			(*iter).second.push_back( _functor );
-			return;
+			if ((*lliter)->GetOwner() == _object)
+			{
+				delete (*lliter);
+				(*plliter).erase(lliter);
+				return;
+			}
 		}
 	}
-	
-	// If we didn't find a list we need to add a new one.
-	m_ClientDatabase.push_back( std::pair< unsigned, std::list< BaseFunctor* > >( _id, std::list< BaseFunctor* >() ) );
-	m_ClientDatabase.back().second.push_back( _functor );
 }
 
 void EventManager::UnregisterClient(PhyxObject* _object)
 {
-	for (ClientDatabase::iterator iter = m_ClientDatabase.begin(); iter != m_ClientDatabase.end(); ++iter)
+	for (ClientDatabase::iterator cditer = m_ClientDatabase.begin(); cditer != m_ClientDatabase.end(); ++cditer)
 	{
-		for (std::list< BaseFunctor* >::iterator iter2 = (*iter).second.begin(); iter2 != (*iter).second.end(); ++iter2)
-		{
-			if ((*iter2)->GetOwner() == _object)
-			{
-				delete (*iter2);
-				(*iter).second.erase(iter2);
-				break;
-			}
-		}
+		RemovePrioritizedListener( (*cditer).second, _object );
 	}
 }
 
 void EventManager::UnregisterClient(PhyxObject* _object, unsigned _id)
 {
-	for (ClientDatabase::iterator iter = m_ClientDatabase.begin(); iter != m_ClientDatabase.end(); ++iter)
-	{
-		if ((*iter).first == _id)
-		{
-			for (std::list< BaseFunctor* >::iterator iter2 = (*iter).second.begin(); iter2 != (*iter).second.end(); ++iter2)
-			{
-				if ((*iter2)->GetOwner() == _object)
-				{
-					delete (*iter2);
-					(*iter).second.erase(iter2);
-					return;
-				}
-			}
-		}
-	}
+	RemovePrioritizedListener( m_ClientDatabase[ _id ], _object );
 }
 
 void EventManager::SendEvent(unsigned _id, BaseEvent* _data, short _frameDelay)
 {
-	m_QueedEvents.push_back( EventManager::pendingEvent( _id, _data, _frameDelay ) );
+	if ( _frameDelay == -1 )
+	{
+		EventDataPair eventData( _id, _data );
+		DispatchEvent( eventData );
+	}
+	else
+	{
+		m_QueedEvents.push_back( EventManager::pendingEvent( _id, _data, _frameDelay ) );
+	}
 }
 
 void EventManager::ProcessEvents(void)
@@ -84,7 +84,7 @@ void EventManager::ProcessEvents(void)
 	{
 		if ((*iter).delay == 0)
 		{
-			m_CurrentEvents.push_back( std::pair< unsigned, BaseEvent* >( (*iter).id, (*iter).data ) );
+			m_CurrentEvents.push_back( EventDataPair( (*iter).id, (*iter).data ) );
 			iter = m_QueedEvents.erase(iter);
 			continue;
 		}
@@ -94,29 +94,29 @@ void EventManager::ProcessEvents(void)
 	
 	while (!m_CurrentEvents.empty())
 	{
-		for (ClientDatabase::iterator iter = m_ClientDatabase.begin(); iter != m_ClientDatabase.end(); ++iter)
-		{
-			if (m_CurrentEvents.front().first == (*iter).first)
-			{
-				for (std::list< BaseFunctor* >::iterator iter2 = (*iter).second.begin(); iter2 != (*iter).second.end(); ++iter2)
-				{
-					if (!(*(*iter2))(m_CurrentEvents.front().first, m_CurrentEvents.front().second))
-					{
-						break;
-					}
-				}
-				
-				// We've dispatched this event to all clients
-				break;
-			}
-		}
-		
-		// remove front event now that we're done with it
-		delete m_CurrentEvents.front().second;
+		DispatchEvent( m_CurrentEvents.front() );
 		m_CurrentEvents.pop_front();
 	}
 }
 
+void EventManager::DispatchEvent( EventDataPair& _event )
+{
+	for (PrioritizedListenerList::iterator plliter = m_ClientDatabase[ _event.first ].begin(); plliter != m_ClientDatabase[ _event.first ].end(); ++plliter)
+	{
+		for (ListenerList::iterator lliter = (*plliter).begin(); lliter != (*plliter).end(); ++lliter)
+		{
+			if (!(*(*lliter))(_event.first, _event.second))
+			{
+				if ( _event.second != NULL )
+				{
+					delete _event.second;
+				}
+				return;
+			}
+		}
+	}
+	
+}
 
 
 
