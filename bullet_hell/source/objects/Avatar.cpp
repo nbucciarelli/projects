@@ -8,6 +8,7 @@
  */
 
 #include "Avatar.h"
+#include "Weapon.h"
 
 #include "phyx/managers/EventManager.h"
 #include "phyx/components/RenderComponent.h"
@@ -23,6 +24,8 @@ Avatar::Avatar() : Entity()
 	std::string scaleStr( "scale" );
 	Phyx->SetAttr< vec2 >( this, scaleStr, vec2( 4.0f, 4.0f ) );
 	Phyx->Add( new RenderComponent( this, "tempavatar.tga", 16, 16, true ), OP_UI );
+	m_pWeapon = new Weapon();
+	m_pWeapon->SetParent(this);
 }
 
 Avatar::~Avatar()

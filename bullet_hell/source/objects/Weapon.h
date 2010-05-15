@@ -10,6 +10,11 @@
 #define Weapon_H_
 
 #include "phyx/objects/Entity.h"
+#include <vector>
+using std::vector;
+
+class Bullet;
+class Avatar;
 
 enum eWeaponType { PISTOL, SHOTGUN, BURST_RIFLE, AUTO_RIFLE };
 
@@ -23,8 +28,10 @@ protected:
 	
 private:
 	/*	Private Data Members	*/
+	Avatar* m_pParent;
 	int m_nType;
 	float m_fROF;
+	vector<Bullet*> m_pBullets;
 	
 public:
 	/*	Public Functions		*/
@@ -45,8 +52,16 @@ public:
 	void Update(float _delta);
 	
 	/**********************************
+	 *	Function:	Mutators
+	 **********************************/
+	void SetParent(Avatar* pParent) { m_pParent = pParent; }
+	void SetType(int nType);
+	void SetROF(float fROF) { m_fROF = fROF; }
+	
+	/**********************************
 	 *	Function:	Accessors
 	 **********************************/
+	Avatar* GetParent(void) { return m_pParent; }
 	int GetType(void) { return m_nType; }
 	float GetROF(void) { return m_fROF; }
 	
@@ -55,11 +70,6 @@ protected:
 	
 private:
 	/*	Private Functions		*/
-	/**********************************
-	 *	Function:	Mutators
-	 **********************************/
-	void SetType(int nType) { m_nType = nType; }
-	void SetROF(float fROF) { m_fROF = fROF; }
 };
 
 #endif

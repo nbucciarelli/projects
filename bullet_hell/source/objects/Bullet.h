@@ -25,6 +25,7 @@ private:
 	/*	Private Data Members	*/
 	int m_nDamage;
 	float m_fLifetime;
+	vec2 m_vDirection;
 	
 public:
 	/*	Public Functions		*/
@@ -45,21 +46,24 @@ public:
 	void Update(float _delta);
 	
 	/**********************************
+	 *	Function:	Mutators
+	 **********************************/
+	void SetDamage(int nDamage) { m_nDamage = nDamage; }
+	void SetLifetime(float fLifetime) { m_fLifetime = fLifetime; }
+	void SetDireciton(vec2 vDirection) {m_vDirection = vDirection; }
+	
+	/**********************************
 	 *	Function:	Accessors
 	 **********************************/
 	int GetDamage(void) { return m_nDamage; }
 	float GetLifetime(void) { return m_fLifetime; }
+	vec2 GetDirection(void) { return m_vDirection; }
 	
 protected:
 	/*	Protected Functions		*/
 	
 private:
 	/*	Private Functions		*/
-	/**********************************
-	 *	Function:	Mutators
-	 **********************************/
-	void SetDamage(int nDamage) { m_nDamage = nDamage; }
-	void SetLifetime(float fLifetime) { m_fLifetime = fLifetime; }
 };
 
 #endif

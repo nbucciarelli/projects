@@ -11,8 +11,10 @@
 #define Avatar_H_
 
 class BaseEvent;
+class Weapon;
 
 #include "phyx/objects/Entity.h"
+
 class Avatar : public Entity
 {
 public:
@@ -23,6 +25,7 @@ protected:
 	
 private:
 	/*	Private Data Members	*/
+	Weapon* m_pWeapon;
 	
 public:
 	/*	Public Functions		*/
