@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01182249119E01EF00DEFADF /* Weapon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 01182247119E01EF00DEFADF /* Weapon.mm */; };
+		012073D2119E59A600E5EE01 /* Bullet.mm in Sources */ = {isa = PBXBuildFile; fileRef = 012073D0119E59A600E5EE01 /* Bullet.mm */; };
 		0165E5731198B44500E7AB8C /* tempavatar.tga in Resources */ = {isa = PBXBuildFile; fileRef = 0165E5721198B44500E7AB8C /* tempavatar.tga */; };
 		01DA892F118B7A0F0060C5B6 /* MenuState.mm in Sources */ = {isa = PBXBuildFile; fileRef = 01DA892E118B7A0F0060C5B6 /* MenuState.mm */; };
 		1D3623260D0F684500981E51 /* bullet_hellAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* bullet_hellAppDelegate.m */; };
@@ -47,6 +49,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01182247119E01EF00DEFADF /* Weapon.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Weapon.mm; sourceTree = "<group>"; };
+		01182248119E01EF00DEFADF /* Weapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weapon.h; sourceTree = "<group>"; };
+		012073D0119E59A600E5EE01 /* Bullet.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Bullet.mm; sourceTree = "<group>"; };
+		012073D1119E59A600E5EE01 /* Bullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bullet.h; sourceTree = "<group>"; };
 		0165E5721198B44500E7AB8C /* tempavatar.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = tempavatar.tga; sourceTree = "<group>"; };
 		01DA892E118B7A0F0060C5B6 /* MenuState.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MenuState.mm; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -186,6 +192,10 @@
 		726B281B112B87160033D768 /* objects */ = {
 			isa = PBXGroup;
 			children = (
+				012073D0119E59A600E5EE01 /* Bullet.mm */,
+				012073D1119E59A600E5EE01 /* Bullet.h */,
+				01182247119E01EF00DEFADF /* Weapon.mm */,
+				01182248119E01EF00DEFADF /* Weapon.h */,
 				726B2851112B89770033D768 /* Avatar.h */,
 				726B2852112B89770033D768 /* Avatar.cpp */,
 				726B2857112B8A800033D768 /* Enemy.h */,
@@ -320,6 +330,8 @@
 				72FA619B112BAA620079366F /* CreditsState.cpp in Sources */,
 				72AC91261141ED3D009D9CB8 /* DPad.mm in Sources */,
 				01DA892F118B7A0F0060C5B6 /* MenuState.mm in Sources */,
+				01182249119E01EF00DEFADF /* Weapon.mm in Sources */,
+				012073D2119E59A600E5EE01 /* Bullet.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
