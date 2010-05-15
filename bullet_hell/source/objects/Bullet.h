@@ -1,19 +1,19 @@
 //
-//  Weapon.h
+//  Bullet.h
 //  bullet_hell
 //
 //  Created by jamby on 5/14/10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#ifndef Weapon_H_
-#define Weapon_H_
+#ifndef Bullet_H_
+#define Bullet_H_
+
+class BaseEvent;
 
 #include "phyx/objects/Entity.h"
 
-enum eWeaponType { PISTOL, SHOTGUN, BURST_RIFLE, AUTO_RIFLE };
-
-class Weapon : public Entity
+class Bullet : public Entity
 {
 public:
 	/*	Public Data Members		*/
@@ -23,8 +23,8 @@ protected:
 	
 private:
 	/*	Private Data Members	*/
-	int m_nType;
-	float m_fROF;
+	int m_nDamage;
+	float m_fLifetime;
 	
 public:
 	/*	Public Functions		*/
@@ -32,12 +32,12 @@ public:
 	/**********************************
 	 *	Function:	Constructor
 	 **********************************/
-	Weapon();
+	Bullet();
 	
 	/**********************************
 	 *	Function:	Destructor
 	 **********************************/
-	~Weapon();
+	~Bullet();
 	
 	/**********************************
 	 *	Function:	Update
@@ -47,8 +47,8 @@ public:
 	/**********************************
 	 *	Function:	Accessors
 	 **********************************/
-	int GetType(void) { return m_nType; }
-	float GetROF(void) { return m_fROF; }
+	int GetDamage(void) { return m_nDamage; }
+	float GetLifetime(void) { return m_fLifetime; }
 	
 protected:
 	/*	Protected Functions		*/
@@ -58,8 +58,8 @@ private:
 	/**********************************
 	 *	Function:	Mutators
 	 **********************************/
-	void SetType(int nType) { m_nType = nType; }
-	void SetROF(float fROF) { m_fROF = fROF; }
+	void SetDamage(int nDamage) { m_nDamage = nDamage; }
+	void SetLifetime(float fLifetime) { m_fLifetime = fLifetime; }
 };
 
 #endif
