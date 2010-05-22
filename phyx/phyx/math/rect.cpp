@@ -9,3 +9,9 @@
 
 #include "rect.h"
 
+#include "vec2.h"
+
+bool rect::containsPoint(const vec2* _v) const
+{
+	return _v->inRect( this );
+}

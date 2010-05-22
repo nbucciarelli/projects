@@ -193,7 +193,7 @@ void CRenderer::DrawTexture(TextureHandle _handle, const vec2& _pos, bool _cente
 {
 	if (_handle == -1)
 	{
-		logger->log( "Failed to render a texture with id -1.", ERROR );
+		logger->log( "Failed to render a texture with id -1.", WARNING );
 		return;
 	}
 	
@@ -297,7 +297,9 @@ GLbyte* CRenderer::DecodeTGA(const char* _fileName, short& _canvasWidth, short& 
 	std::ifstream fin(_GetFilePathGivenCStr(_fileName), std::ios::binary);
 	if (!fin.is_open())
 	{
-		logger->log( "Failed to open file in CRenderer::DecodeTGA", ERROR );
+		char buffer[64];
+		sprintf( buffer, "Failed to open file in CRenderer::DecodeTGA _fileName: %s, absolute path: %s", _fileName, _GetFilePathGivenCStr(_fileName) );
+		logger->log( buffer, ERROR );
 		return NULL;
 	}
 	

@@ -24,6 +24,7 @@
 		726B283B112B87680033D768 /* GamePlayState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 726B283A112B87680033D768 /* GamePlayState.cpp */; };
 		726B2853112B89770033D768 /* Avatar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 726B2852112B89770033D768 /* Avatar.cpp */; };
 		726B2859112B8A800033D768 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 726B2858112B8A800033D768 /* Enemy.cpp */; };
+		72A0893E119F86B70090B9A5 /* pixel.tga in Resources */ = {isa = PBXBuildFile; fileRef = 72A0893D119F86B70090B9A5 /* pixel.tga */; };
 		72AC91261141ED3D009D9CB8 /* DPad.mm in Sources */ = {isa = PBXBuildFile; fileRef = 72AC91251141ED3D009D9CB8 /* DPad.mm */; };
 		72AC91D311441B64009D9CB8 /* dpad_backdrop.tga in Resources */ = {isa = PBXBuildFile; fileRef = 72AC91D211441B64009D9CB8 /* dpad_backdrop.tga */; };
 		72AC92BD1144609B009D9CB8 /* phyx_documentation.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72AC92BC1144609B009D9CB8 /* phyx_documentation.txt */; };
@@ -79,6 +80,7 @@
 		726B2858112B8A800033D768 /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
 		728F7FE0117B8CCC00FF4F08 /* EventIds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventIds.h; sourceTree = "<group>"; };
 		728F81A8117BBBC500FF4F08 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
+		72A0893D119F86B70090B9A5 /* pixel.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = pixel.tga; sourceTree = "<group>"; };
 		72AC91241141ED3D009D9CB8 /* DPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPad.h; sourceTree = "<group>"; };
 		72AC91251141ED3D009D9CB8 /* DPad.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DPad.mm; sourceTree = "<group>"; };
 		72AC91D211441B64009D9CB8 /* dpad_backdrop.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = dpad_backdrop.tga; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 		72AC9127114408FA009D9CB8 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				72A0893D119F86B70090B9A5 /* pixel.tga */,
 				0165E5721198B44500E7AB8C /* tempavatar.tga */,
 				72AC91D211441B64009D9CB8 /* dpad_backdrop.tga */,
 			);
@@ -310,6 +313,7 @@
 				72AC91D311441B64009D9CB8 /* dpad_backdrop.tga in Resources */,
 				72AC92BD1144609B009D9CB8 /* phyx_documentation.txt in Resources */,
 				0165E5731198B44500E7AB8C /* tempavatar.tga in Resources */,
+				72A0893E119F86B70090B9A5 /* pixel.tga in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

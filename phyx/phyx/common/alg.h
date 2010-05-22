@@ -26,7 +26,13 @@
  *	Function:	_GetFilePath
  *	Purpose:	retrieve a file path for a resource given an NSString object. (nil can be passed for ext?)
  ****************************************/
-#define _GetFilePath(path, ext)		[ [ [NSBundle mainBundle] pathForResource: path ofType: ext ] cStringUsingEncoding: 1 ]
+#define _GetFilePath(path, ext)			[ [NSBundle mainBundle] pathForResource: path ofType: ext ]
+
+/****************************************
+ *	Function:	_NSStrToCStr
+ *	Purpose:	Convert a NSString object to a char*
+ ****************************************/
+#define _NSStrToCStr(str)			[str cStringUsingEncoding: 1]
 
 /****************************************
  *	Function:	_CStrToNSStr
@@ -39,7 +45,7 @@
  *	Purpose:	Retrieve a file path for a resource given a char*.
  *	Note:		Uses "nil" as second parameter, is this always acceptable?
  ****************************************/
-#define _GetFilePathGivenCStr(str)	_GetFilePath(_CStrToNSStr(str), nil)
+#define _GetFilePathGivenCStr(str)	_NSStrToCStr( _GetFilePath( _CStrToNSStr( str ), nil ) )
 
 /****************************************
  *	Function:	_Swap

@@ -14,6 +14,7 @@
 
 #include "PhyxMath.h"
 #include "rect.h"
+#include "circle.h"
 
 /*	Public Functions	*/
 float vec2::magnitude() const
@@ -73,7 +74,14 @@ bool vec2::inRect(const rect* _r) const
 	return false;
 }
 
-bool vec2::inCircle(const vec2& _center, float _radius) const
+bool vec2::inCircle( const circle* _circle ) const
+{
+	if ( (*this - _circle->center).magnitudeSquared() < _circle->radius * _circle->radius )
+		return true;
+	return false;
+}
+
+bool vec2::inCircle( vec2 _center, float _radius ) const
 {
 	if ( (*this - _center).magnitudeSquared() < _radius * _radius )
 		return true;

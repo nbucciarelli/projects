@@ -9,7 +9,8 @@
 #ifndef VEC_2_
 #define VEC_2_
 
-class rect;
+struct rect;
+struct circle;
  
 struct vec2
 {
@@ -77,19 +78,27 @@ struct vec2
 	
 	/*********************************
 	 *	Function:	inRect
-	 *	Created:	[KR] May 9, 2010
+	 *	Created:	[KR] May 14, 2010
 	 *	Purpose:	Determine if a vec2 is in a rect.
 	 *	Return:		true if inside rect false otherwise.
 	 *********************************/
 	bool inRect(const rect* _r) const;
 	
 	/*********************************
-	 *	Function:	angleBetween
-	 *	Created:	[KR] May 9, 2010
+	 *	Function:	inCircle
+	 *	Created:	[KR] May 14, 2010
 	 *	Purpose:	Determine if a vec2 is in a circle.
 	 *	Return:		true if inside circle, false otherwise.
 	 *********************************/
-	bool inCircle(const vec2& _center, float _radius) const;
+	bool inCircle( const circle* _circle ) const;
+	
+	/*********************************
+	 *	Function:	inCircle
+	 *	Created:	[KR] May 14, 2010
+	 *	Purpose:	Determine if a vec2 is in a circle.
+	 *	Return:		true if inside circle, false otherwise.
+	 *********************************/
+	bool inCircle( vec2 _center, float _radius ) const;
 	
 	/*********************************
 	 *	Function:	equals

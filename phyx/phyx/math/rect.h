@@ -11,6 +11,8 @@
 #ifndef rect_H_
 #define rect_H_
 
+struct vec2;
+
 struct rect
 {
 	float left, bottom, right, top;
@@ -27,12 +29,19 @@ struct rect
 	static rect emptyRect()			{ return rect(); }
 	
 	/*********************************
-	 *	Function:	magnitude
-	 *	Purpose:	Return the length of the vector.
-	 *				This uses sqrt() so avoid when possible.
+	 *	Function:	width/height
+	 *	Purpose:	return the width/height of the rect
 	 *********************************/
 	inline float width() const	{ return right - left; }
 	inline float height() const	{ return top - bottom; }
+	
+	/*********************************
+	 *	Function:	containsPoint
+	 *	Created:	[KR] May 15, 2010
+	 *	Purpose:	Determine if a vec2 is in a rect.
+	 *	Return:		true if inside rect false otherwise.
+	 *********************************/
+	bool containsPoint(const vec2* _point) const;
 };
 
 inline bool operator==(const rect& _r1, const rect&  _r2)	

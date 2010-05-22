@@ -74,7 +74,7 @@ Logger::~Logger()
 					severity = "ERROR";
 					break;
 			}
-			fout << _str << "Severity: " << severity;
+			fout << severity << " : " << _str;
 			fout.close();
 		}
 	}

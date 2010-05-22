@@ -50,6 +50,9 @@
 		728FE5291132242800C52561 /* EventIds.h in Headers */ = {isa = PBXBuildFile; fileRef = 728FE5281132242800C52561 /* EventIds.h */; };
 		729FDF15118DE00200A5C8F8 /* RenderComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 729FDF13118DE00200A5C8F8 /* RenderComponent.h */; };
 		729FDF16118DE00200A5C8F8 /* RenderComponent.mm in Sources */ = {isa = PBXBuildFile; fileRef = 729FDF14118DE00200A5C8F8 /* RenderComponent.mm */; };
+		72A0884D119F60FD0090B9A5 /* circle.h in Headers */ = {isa = PBXBuildFile; fileRef = 72A0884B119F60FD0090B9A5 /* circle.h */; };
+		72A0884E119F60FD0090B9A5 /* circle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72A0884C119F60FD0090B9A5 /* circle.cpp */; };
+		72A0892E119F839A0090B9A5 /* pixel.tga in Resources */ = {isa = PBXBuildFile; fileRef = 72AC914C114409C2009D9CB8 /* pixel.tga */; };
 		72EEF663112B63C70038073A /* Globals.h in Headers */ = {isa = PBXBuildFile; fileRef = 72EEF662112B63C70038073A /* Globals.h */; };
 		72EEF6F4112B6E550038073A /* phyxCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 72EEF6F2112B6E550038073A /* phyxCommon.h */; };
 		72EEF6F5112B6E550038073A /* phyxCommon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 72EEF6F3112B6E550038073A /* phyxCommon.mm */; };
@@ -110,6 +113,8 @@
 		728FE5281132242800C52561 /* EventIds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventIds.h; sourceTree = "<group>"; };
 		729FDF13118DE00200A5C8F8 /* RenderComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderComponent.h; sourceTree = "<group>"; };
 		729FDF14118DE00200A5C8F8 /* RenderComponent.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RenderComponent.mm; sourceTree = "<group>"; };
+		72A0884B119F60FD0090B9A5 /* circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circle.h; sourceTree = "<group>"; };
+		72A0884C119F60FD0090B9A5 /* circle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = circle.cpp; sourceTree = "<group>"; };
 		72AC914C114409C2009D9CB8 /* pixel.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = pixel.tga; sourceTree = "<group>"; };
 		72AC92BB11446042009D9CB8 /* phyx_documentation.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = phyx_documentation.txt; sourceTree = "<group>"; };
 		72EEF662112B63C70038073A /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
@@ -247,6 +252,8 @@
 				728E2704111F49D000763E7F /* vec2.h */,
 				728E2705111F49D000763E7F /* vec2.mm */,
 				728424981144865D0004D346 /* PhyxMath.h */,
+				72A0884B119F60FD0090B9A5 /* circle.h */,
+				72A0884C119F60FD0090B9A5 /* circle.cpp */,
 			);
 			path = math;
 			sourceTree = "<group>";
@@ -317,6 +324,7 @@
 				72883CD4117AB27A0061F33C /* phyx.h in Headers */,
 				728F8185117BAF7000FF4F08 /* Camera.h in Headers */,
 				729FDF15118DE00200A5C8F8 /* RenderComponent.h in Headers */,
+				72A0884D119F60FD0090B9A5 /* circle.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +338,7 @@
 				728E2692111F46C000763E7F /* Headers */,
 				728E2693111F46C000763E7F /* Sources */,
 				728E2694111F46C000763E7F /* Frameworks */,
+				72A08934119F83A10090B9A5 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -357,6 +366,17 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		72A08934119F83A10090B9A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72A0892E119F839A0090B9A5 /* pixel.tga in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		728E2693111F46C000763E7F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -382,6 +402,7 @@
 				72883CD5117AB27A0061F33C /* phyx.mm in Sources */,
 				728F8186117BAF7000FF4F08 /* Camera.cpp in Sources */,
 				729FDF16118DE00200A5C8F8 /* RenderComponent.mm in Sources */,
+				72A0884E119F60FD0090B9A5 /* circle.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
