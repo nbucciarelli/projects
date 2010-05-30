@@ -33,45 +33,12 @@ public:
 	 *	Function:	Operator()
 	 *	Purpose:	Call the function pointed to by the functor.
 	 **********************************/
-	virtual void operator()(void) {}
 	virtual bool operator()(BaseEvent* _data = 0 /* NULL */) { return true; }
 	
 	virtual bool operator==(const BaseFunctor& _other) { return true; }
 	
 	virtual const PhyxObject * const GetOwner() const { return 0; }
 };
-
-template <typename T>
-class VTemplatedFunctorV : public BaseFunctor
-{
-private:
-	T*		m_pOwner;
-	void	(T::*m_pFunc)(void);
-	
-	
-public:
-	VTemplatedFunctorV(T* _owner, void (T::*_pFunc)(void)) 
-	{ 
-		m_pOwner = _owner; 
-		m_pFunc = _pFunc; 
-	}
-	~VTemplatedFunctorV() {}
-	
-	T* GetOwner()	{ return m_pOwner; }
-	
-	/**********************************
-	 *	Function:	Operator()
-	 *	Purpose:	Call the function pointed to by the functor.
-	 **********************************/
-	void operator()()
-	{
-		/*return*/ (m_pOwner->*m_pFunc)();
-	}
-	
-	bool operator==(const VTemplatedFunctorV& _other)
-	{ return (m_pOwner == ((VTemplatedFunctorV)_other).m_pOwner && m_pFunc == ((VTemplatedFunctorV)_other).m_pFunc); }
-};
-
 
 
 template <typename T>
