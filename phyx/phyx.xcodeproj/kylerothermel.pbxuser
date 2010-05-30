@@ -133,6 +133,14 @@
 			723135BA11B314BA000B6CF8 /* PBXTextBookmark */ = 723135BA11B314BA000B6CF8 /* PBXTextBookmark */;
 			723135BB11B314BA000B6CF8 /* PBXTextBookmark */ = 723135BB11B314BA000B6CF8 /* PBXTextBookmark */;
 			723135BC11B314BA000B6CF8 /* PBXTextBookmark */ = 723135BC11B314BA000B6CF8 /* PBXTextBookmark */;
+			7231360011B32103000B6CF8 /* PBXTextBookmark */ = 7231360011B32103000B6CF8 /* PBXTextBookmark */;
+			7231360111B32103000B6CF8 /* PBXTextBookmark */ = 7231360111B32103000B6CF8 /* PBXTextBookmark */;
+			7231360211B32103000B6CF8 /* PBXTextBookmark */ = 7231360211B32103000B6CF8 /* PBXTextBookmark */;
+			7231360311B32103000B6CF8 /* PBXTextBookmark */ = 7231360311B32103000B6CF8 /* PBXTextBookmark */;
+			7231360411B32103000B6CF8 /* PBXTextBookmark */ = 7231360411B32103000B6CF8 /* PBXTextBookmark */;
+			7231360511B32103000B6CF8 /* PBXTextBookmark */ = 7231360511B32103000B6CF8 /* PBXTextBookmark */;
+			7231360611B32103000B6CF8 /* PBXTextBookmark */ = 7231360611B32103000B6CF8 /* PBXTextBookmark */;
+			7231360711B32103000B6CF8 /* PBXTextBookmark */ = 7231360711B32103000B6CF8 /* PBXTextBookmark */;
 			7285551E11AE1C8300E6E69C = 7285551E11AE1C8300E6E69C /* PBXTextBookmark */;
 			7285551F11AE1C8300E6E69C = 7285551F11AE1C8300E6E69C /* PBXTextBookmark */;
 			7285552211AE1C8300E6E69C = 7285552211AE1C8300E6E69C /* PBXTextBookmark */;
@@ -293,6 +301,83 @@
 		vrLen = 880;
 		vrLoc = 6335;
 	};
+	7231360011B32103000B6CF8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 728E270D111F49D000763E7F /* Renderer.mm */;
+		name = "Renderer.mm: 279";
+		rLen = 0;
+		rLoc = 6740;
+		rType = 0;
+		vrLen = 880;
+		vrLoc = 6335;
+	};
+	7231360111B32103000B6CF8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 728FE4AA11321A2B00C52561 /* EventManager.cpp */;
+		name = "EventManager.cpp: 108";
+		rLen = 37;
+		rLoc = 2787;
+		rType = 0;
+		vrLen = 500;
+		vrLoc = 2432;
+	};
+	7231360211B32103000B6CF8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 728FE4A911321A2B00C52561 /* EventManager.h */;
+		rLen = 0;
+		rLoc = 2147483647;
+		rType = 0;
+	};
+	7231360311B32103000B6CF8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 728E270D111F49D000763E7F /* Renderer.mm */;
+		name = "Renderer.mm: 279";
+		rLen = 0;
+		rLoc = 6740;
+		rType = 0;
+		vrLen = 880;
+		vrLoc = 6335;
+	};
+	7231360411B32103000B6CF8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 728FE4AA11321A2B00C52561 /* EventManager.cpp */;
+		name = "EventManager.cpp: 108";
+		rLen = 37;
+		rLoc = 2787;
+		rType = 0;
+		vrLen = 500;
+		vrLoc = 2432;
+	};
+	7231360511B32103000B6CF8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 728FE4A911321A2B00C52561 /* EventManager.h */;
+		name = "EventManager.h: 64";
+		rLen = 0;
+		rLoc = 1049;
+		rType = 0;
+		vrLen = 774;
+		vrLoc = 683;
+	};
+	7231360611B32103000B6CF8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 728FE4A911321A2B00C52561 /* EventManager.h */;
+		name = "EventManager.h: 64";
+		rLen = 0;
+		rLoc = 1049;
+		rType = 0;
+		vrLen = 774;
+		vrLoc = 683;
+	};
+	7231360711B32103000B6CF8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 728FE4A911321A2B00C52561 /* EventManager.h */;
+		name = "EventManager.h: 64";
+		rLen = 0;
+		rLoc = 1049;
+		rType = 0;
+		vrLen = 774;
+		vrLoc = 683;
+	};
 	726B277E112B791B0033D768 /* StateManager.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {609, 1890}}";
@@ -418,8 +503,8 @@
 	728E26E9111F49D000763E7F /* Functors.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {838, 1590}}";
-			sepNavSelRange = "{706, 5}";
-			sepNavVisRange = "{179, 945}";
+			sepNavSelRange = "{1715, 0}";
+			sepNavVisRange = "{1176, 1045}";
 			sepNavWindowFrame = "{{246, 4}, {862, 774}}";
 		};
 	};
@@ -584,7 +669,7 @@
 			sepNavIntBoundsRect = "{{0, 0}, {1069, 5805}}";
 			sepNavSelRange = "{6740, 0}";
 			sepNavVisRange = "{6335, 880}";
-			sepNavWindowFrame = "{{429, -7}, {789, 774}}";
+			sepNavWindowFrame = "{{245, 4}, {789, 774}}";
 		};
 	};
 	728E2742111F4A9300763E7F /* backlog.txt */ = {
@@ -620,17 +705,17 @@
 	};
 	728FE4A911321A2B00C52561 /* EventManager.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {953, 2310}}";
-			sepNavSelRange = "{1223, 33}";
-			sepNavVisRange = "{942, 961}";
+			sepNavIntBoundsRect = "{{0, 0}, {768, 2265}}";
+			sepNavSelRange = "{1049, 0}";
+			sepNavVisRange = "{683, 774}";
 			sepNavWindowFrame = "{{4, 4}, {668, 774}}";
 		};
 	};
 	728FE4AA11321A2B00C52561 /* EventManager.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1104, 1890}}";
-			sepNavSelRange = "{2908, 0}";
-			sepNavVisRange = "{2385, 563}";
+			sepNavIntBoundsRect = "{{0, 0}, {1104, 1920}}";
+			sepNavSelRange = "{2808, 0}";
+			sepNavVisRange = "{2165, 771}";
 			sepNavWindowFrame = "{{11, 4}, {829, 774}}";
 		};
 	};

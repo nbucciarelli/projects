@@ -50,7 +50,7 @@ void Avatar::Update(float _delta)
 		m_vPosition.y = 295.0f;
 }
 
-bool Avatar::OnDPadMoved(unsigned _event, BaseEvent* _data)
+bool Avatar::OnDPadMoved(BaseEvent* _data)
 {
 	m_vPosition += ((Vec2Event*)_data)->data * SPEED_SCALE;
 	return true;

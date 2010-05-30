@@ -105,7 +105,7 @@ void EventManager::DispatchEvent( EventDataPair& _event )
 	{
 		for (ListenerList::iterator lliter = (*plliter).begin(); lliter != (*plliter).end(); ++lliter)
 		{
-			if (!(*(*lliter))(_event.first, _event.second))
+			if (!(*(*lliter))(_event.second))
 			{
 				if ( _event.second != NULL )
 				{

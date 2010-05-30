@@ -221,6 +221,51 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
+				<string>7231361511B321AE000B6CF8</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>DPad.mm</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>7231361611B321AE000B6CF8</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>DPad.mm</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>7231361A11B321AE000B6CF8</string>
+						<key>history</key>
+						<array>
+							<string>7231361711B321AE000B6CF8</string>
+							<string>7231361811B321AE000B6CF8</string>
+						</array>
+						<key>prevStack</key>
+						<array>
+							<string>7231361911B321AE000B6CF8</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {862, 677}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>300 60 862 718 0 0 1280 778 </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
 				<string>723135DB11B31C21000B6CF8</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>GamePlayState.h</string>
@@ -235,7 +280,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>723135F911B31D02000B6CF8</string>
+						<string>7231361B11B321AE000B6CF8</string>
 						<key>history</key>
 						<array>
 							<string>723135F611B31D02000B6CF8</string>
@@ -280,7 +325,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>723135FA11B31D02000B6CF8</string>
+						<string>7231361C11B321AE000B6CF8</string>
 						<key>history</key>
 						<array>
 							<string>723135E711B31C21000B6CF8</string>
@@ -326,7 +371,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>723135FB11B31D02000B6CF8</string>
+						<string>7231361D11B321AE000B6CF8</string>
 						<key>history</key>
 						<array>
 							<string>723135E011B31C21000B6CF8</string>
@@ -616,8 +661,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>14</integer>
-									<integer>10</integer>
+									<integer>27</integer>
+									<integer>17</integer>
 									<integer>6</integer>
 									<integer>0</integer>
 								</array>
@@ -677,7 +722,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>296951042.59477198</real>
+	<real>296952238.25110799</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>1</integer>
 	<key>ToolbarIsVisible</key>
@@ -695,10 +740,11 @@
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>726B2717112B717D0033D768</string>
-		<string>/Users/kylerothermel/Documents/Code/nbucciarelli_repository/projects/bullet_hell/bullet_hell.xcodeproj</string>
 		<string>723135DE11B31C21000B6CF8</string>
 		<string>723135E511B31C21000B6CF8</string>
 		<string>723135DB11B31C21000B6CF8</string>
+		<string>/Users/kylerothermel/Documents/Code/nbucciarelli_repository/projects/bullet_hell/bullet_hell.xcodeproj</string>
+		<string>7231361511B321AE000B6CF8</string>
 	</array>
 	<key>WindowString</key>
 	<string>30 60 238 718 0 0 1280 778 </string>

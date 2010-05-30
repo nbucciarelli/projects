@@ -47,9 +47,9 @@ public:
 	/**********************************
 	 *	Function:	event handlers
 	 **********************************/
-	bool OnTouchesBegan(unsigned _event, BaseEvent* _data);
-	bool OnTouchesMoved(unsigned _event, BaseEvent* _data);
-	bool OnTouchesEnded(unsigned _event, BaseEvent* _data);
+	bool OnTouchesBegan(BaseEvent* _data);
+	bool OnTouchesMoved(BaseEvent* _data);
+	bool OnTouchesEnded(BaseEvent* _data);
 	
 protected:
 	/*	Protected Functions		*/

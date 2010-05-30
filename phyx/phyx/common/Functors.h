@@ -34,7 +34,7 @@ public:
 	 *	Purpose:	Call the function pointed to by the functor.
 	 **********************************/
 	virtual void operator()(void) {}
-	virtual bool operator()(unsigned _event, BaseEvent* _data = 0 /* NULL */) { return true; }
+	virtual bool operator()(BaseEvent* _data = 0 /* NULL */) { return true; }
 	
 	virtual bool operator==(const BaseFunctor& _other) { return true; }
 	
@@ -80,11 +80,11 @@ class EventFunctor : public BaseFunctor
 private:
 	/*	Private Data Members	*/
 	T*		m_pOwner;
-	bool	(T::*m_pEventHandler)(unsigned, BaseEvent*);
+	bool	(T::*m_pEventHandler)(BaseEvent*);
 	
 public:
 	/*	Public Functions		*/
-	EventFunctor(T* _owner, bool (T::*_pEventHandler)(unsigned, BaseEvent*)) 
+	EventFunctor(T* _owner, bool (T::*_pEventHandler)(BaseEvent*)) 
 	{ 
 		m_pOwner = _owner; 
 		m_pEventHandler = _pEventHandler; 
@@ -92,9 +92,9 @@ public:
 	
 	~EventFunctor() {}
 	
-	bool operator()(unsigned _event, BaseEvent* _data = 0 /* NULL */)
+	bool operator()(BaseEvent* _data = 0 /* NULL */)
 	{
-		return (m_pOwner->*m_pEventHandler)(_event, _data);
+		return (m_pOwner->*m_pEventHandler)(_data);
 	}
 	bool operator==(const EventFunctor& _func)
 	{ return (m_pOwner == _func.m_pOwner && m_pEventHandler == _func.m_pEventHandler); }

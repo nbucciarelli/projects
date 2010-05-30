@@ -57,7 +57,7 @@ void DPad::Update(float _delta)
 	}
 }
 
-bool DPad::OnTouchesBegan(unsigned _event, BaseEvent* _data)
+bool DPad::OnTouchesBegan(BaseEvent* _data)
 {
 	if ( ((Vec2Event*)_data)->data.inCircle( m_vPosition, MAX_DISTANCE ) )
 	{
@@ -75,7 +75,7 @@ bool DPad::OnTouchesBegan(unsigned _event, BaseEvent* _data)
 	return true;
 }
 
-bool DPad::OnTouchesMoved(unsigned _event, BaseEvent* _data)
+bool DPad::OnTouchesMoved(BaseEvent* _data)
 {
 	if ( m_bSelected )
 	{
@@ -92,7 +92,7 @@ bool DPad::OnTouchesMoved(unsigned _event, BaseEvent* _data)
 	return true;
 }
 
-bool DPad::OnTouchesEnded(unsigned _event, BaseEvent* _data)
+bool DPad::OnTouchesEnded(BaseEvent* _data)
 {
 	if ( m_bSelected )
 	{
