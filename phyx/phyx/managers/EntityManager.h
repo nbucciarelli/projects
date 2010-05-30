@@ -62,13 +62,14 @@ private:
 	 *	Function:	RegisterEntity
 	 *	Purpose:	Add a new entity to the manager
 	 **********************************/
-	void RegisterEntity(PhyxObject* _object, unsigned _priority);
+	unsigned RegisterEntity(PhyxObject* _object, unsigned _priority);
 	
 	/**********************************
 	 *	Function:	RemoveEntity
 	 *	Purpose:	Remove an entity
 	 **********************************/
 	void RemoveEntity(PhyxObject* _object);
+	void RemoveEntity(unsigned _id);
 	
 	/**********************************
 	 *	Function:	Update

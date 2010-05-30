@@ -34,7 +34,7 @@ PhyxObject* EntityManager::operator[](unsigned _id)
 	return m_mEntities[_id]; 
 }
 
-void EntityManager::RegisterEntity(PhyxObject* _object, unsigned _priority)
+unsigned EntityManager::RegisterEntity(PhyxObject* _object, unsigned _priority)
 {
 	m_mEntities[ _object->GetID() ] = _object;
 	
@@ -42,13 +42,19 @@ void EntityManager::RegisterEntity(PhyxObject* _object, unsigned _priority)
 		m_lUpdateLists.push_back( std::list< unsigned >() );
 	
 	m_lUpdateLists[ _priority ].push_back( _object->GetID() );
+	
+	return _object->GetID();
 }
 
 void EntityManager::RemoveEntity(PhyxObject* _object)
 {
-	unsigned index = _object->GetID();
-	delete m_mEntities[ index ];
-	m_mEntities[ index ] = NULL;
+	RemoveEntity( _object->GetID() );
+}
+
+void EntityManager::RemoveEntity(unsigned _id)
+{
+	delete m_mEntities[ _id ];
+	m_mEntities[ _id ] = NULL;
 }
 
 void EntityManager::Update(float _delta)

@@ -18,6 +18,8 @@
 		7283E933116F9587008CED12 /* AttributeManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7283E931116F9587008CED12 /* AttributeManager.h */; };
 		7283E934116F9587008CED12 /* AttributeManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7283E932116F9587008CED12 /* AttributeManager.cpp */; };
 		728424991144865D0004D346 /* PhyxMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 728424981144865D0004D346 /* PhyxMath.h */; };
+		7285550B11AE1A8800E6E69C /* vec4.h in Headers */ = {isa = PBXBuildFile; fileRef = 7285550911AE1A8800E6E69C /* vec4.h */; };
+		7285550C11AE1A8800E6E69C /* vec4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7285550A11AE1A8800E6E69C /* vec4.cpp */; };
 		72883CD4117AB27A0061F33C /* phyx.h in Headers */ = {isa = PBXBuildFile; fileRef = 72883CD2117AB27A0061F33C /* phyx.h */; };
 		72883CD5117AB27A0061F33C /* phyx.mm in Sources */ = {isa = PBXBuildFile; fileRef = 72883CD3117AB27A0061F33C /* phyx.mm */; };
 		728E270E111F49D000763E7F /* alg.h in Headers */ = {isa = PBXBuildFile; fileRef = 728E26E8111F49D000763E7F /* alg.h */; };
@@ -75,6 +77,8 @@
 		7283E931116F9587008CED12 /* AttributeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributeManager.h; sourceTree = "<group>"; };
 		7283E932116F9587008CED12 /* AttributeManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AttributeManager.cpp; sourceTree = "<group>"; };
 		728424981144865D0004D346 /* PhyxMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhyxMath.h; sourceTree = "<group>"; };
+		7285550911AE1A8800E6E69C /* vec4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vec4.h; sourceTree = "<group>"; };
+		7285550A11AE1A8800E6E69C /* vec4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vec4.cpp; sourceTree = "<group>"; };
 		72883CD2117AB27A0061F33C /* phyx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = phyx.h; sourceTree = "<group>"; };
 		72883CD3117AB27A0061F33C /* phyx.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = phyx.mm; sourceTree = "<group>"; };
 		728E2696111F46C000763E7F /* libphyxlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libphyxlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -254,6 +258,8 @@
 				728424981144865D0004D346 /* PhyxMath.h */,
 				72A0884B119F60FD0090B9A5 /* circle.h */,
 				72A0884C119F60FD0090B9A5 /* circle.cpp */,
+				7285550911AE1A8800E6E69C /* vec4.h */,
+				7285550A11AE1A8800E6E69C /* vec4.cpp */,
 			);
 			path = math;
 			sourceTree = "<group>";
@@ -325,6 +331,7 @@
 				728F8185117BAF7000FF4F08 /* Camera.h in Headers */,
 				729FDF15118DE00200A5C8F8 /* RenderComponent.h in Headers */,
 				72A0884D119F60FD0090B9A5 /* circle.h in Headers */,
+				7285550B11AE1A8800E6E69C /* vec4.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +410,7 @@
 				728F8186117BAF7000FF4F08 /* Camera.cpp in Sources */,
 				729FDF16118DE00200A5C8F8 /* RenderComponent.mm in Sources */,
 				72A0884E119F60FD0090B9A5 /* circle.cpp in Sources */,
+				7285550C11AE1A8800E6E69C /* vec4.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
