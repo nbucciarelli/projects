@@ -21,6 +21,7 @@
 #include <string>
 
 #include "../math/vec2.h"
+#include "../math/vec4.h"
 #include "../math/rect.h"
 
 #include "../common/Globals.h"
@@ -165,26 +166,26 @@ public:
 	 ****************************************/
 	void DrawTexture(TextureHandle _handle, const vec2& _pos, bool _centered = true, const vec2& _scale = vec2(1.0f, 1.0f),
 					 const vec2& _rotOrigin = vec2(0.0f, 0.0f), float _rotMagnitude = 0.0f, const rect& _crop = rect::emptyRect(),
-					 float _red = 1.0f, float _green = 1.0f, float _blue = 1.0f, float _alpha = 1.0f);
+					 const vec4& _color = vec4(1.0f, 1.0f, 1.0f, 1.0f));
 	
 	/****************************************
 	 *	Function:	DrawLine
 	 *	Purpose:	Draw a line from one point to another.
 	 *	Notes:		Only draws horizontal or verticle lines.
 	 ****************************************/
-	void DrawLine(const vec2& _v1, const vec2& _v2, float _red = 1.0f, float _green = 1.0f, float _blue = 1.0f, float _alpha = 1.0f);
+	void DrawLine(const vec2& _v1, const vec2& _v2, const vec4& _color = vec4(1.0f, 1.0f, 1.0f, 1.0f));
 	
 	/****************************************
 	 *	Function:	DrawRectSolid
 	 *	Purpose:	Draw a rect, filled in.
 	 ****************************************/
-	void DrawRectSolid(const vec2& _topLeft, const vec2& _bottomRight, float _red = 1.0f, float _green = 1.0f, float _blue = 1.0f, float _alpha = 1.0f);
+	void DrawRectSolid(const vec2& _topLeft, const vec2& _bottomRight, const vec4& _color = vec4(1.0f, 1.0f, 1.0f, 1.0f));
 	
 	/****************************************
 	 *	Function:	DrawRect
 	 *	Purpose:	Draw a outline of a rect.
 	 ****************************************/
-	void DrawRect(const vec2& _topLeft, const vec2& _bottomRight, unsigned _lineWidth = 1, float _red = 1.0f, float _green = 1.0f, float _blue = 1.0f, float _alpha = 1.0f);
+	void DrawRect(const vec2& _topLeft, const vec2& _bottomRight, unsigned _lineWidth = 1, const vec4& _color = vec4(1.0f, 1.0f, 1.0f, 1.0f));
 	
 protected:
 	/*	Protected Functions		*/

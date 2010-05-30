@@ -189,7 +189,7 @@ void CRenderer::End(void)
 }
 
 void CRenderer::DrawTexture(TextureHandle _handle, const vec2& _pos, bool _centered, const vec2& _scale, 
-		const vec2& _rotOrigin, float _rotMagnitude, const rect& _crop, float _red, float _green, float _blue, float _alpha)
+		const vec2& _rotOrigin, float _rotMagnitude, const rect& _crop, const vec4& _color)
 {
 	if (_handle == -1)
 	{
@@ -246,7 +246,7 @@ void CRenderer::DrawTexture(TextureHandle _handle, const vec2& _pos, bool _cente
 	glPushMatrix();
 	{
 		// Color
-		glColor4f(_red, _green, _blue, _alpha);
+		glColor4f(_color.r, _color.g, _color.b, _color.a);
 		// If we aren't centered then the lower left is the 0, 0 point of square
 		if (!_centered)
 			glTranslatef(tex->width * _scale.x * .5f, tex->height * _scale.y * .5f, 0.0f);
@@ -269,22 +269,22 @@ void CRenderer::DrawTexture(TextureHandle _handle, const vec2& _pos, bool _cente
 }
 
 
-void CRenderer::DrawLine(const vec2& _v1, const vec2& _v2, float _red, float _green, float _blue, float _alpha)
+void CRenderer::DrawLine(const vec2& _v1, const vec2& _v2, const vec4& _color)
 {
 	// only draw if its horizontal or verticle
 	if (_v1.x == _v2.x || _v1.y == _v2.y)
 	{
 		DrawTexture(m_hPixel, vec2((_v1.x < _v2.x) ? _v1.x : _v2.x, (_v1.y <  _v2.y) ? _v1.y : _v2.y), false, 
 					vec2(std::max(abs(_v2.x - _v1.x), 1), std::max(abs(_v2.y - _v1.y), 1)), vec2(0.0f, 0.0f), 0.0f, 
-					rect::emptyRect(), _red, _green, _blue, _alpha);
+					rect::emptyRect(), _color);
 	}
 }
 
-void CRenderer::DrawRectSolid(const vec2& _topLeft, const vec2& _bottomRight, float _red, float _green, float _blue, float _alpha)
+void CRenderer::DrawRectSolid(const vec2& _topLeft, const vec2& _bottomRight, const vec4& _color)
 {
 }
 
-void CRenderer::DrawRect(const vec2& _topLeft, const vec2& _bottomRight, unsigned _lineWidth, float _red, float _green, float _blue, float _alpha)
+void CRenderer::DrawRect(const vec2& _topLeft, const vec2& _bottomRight, unsigned _lineWidth, const vec4& _color)
 {
 }
 

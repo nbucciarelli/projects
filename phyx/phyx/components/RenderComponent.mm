@@ -42,6 +42,7 @@ void RenderComponent::Update( float _delta )
 	const float * const green = Phyx->GetAttr< float >( (PhyxObject*)m_pControlledEntity, greenStr );
 	const float * const blue = Phyx->GetAttr< float >( (PhyxObject*)m_pControlledEntity, blueStr );
 	const float * const alpha = Phyx->GetAttr< float >( (PhyxObject*)m_pControlledEntity, alphaStr );
+	vec4 color( (red != NULL) ? *red : 1.0f, (green != NULL) ? *green : 1.0f, (blue != NULL) ? *blue : 1.0f, (alpha != NULL) ? *alpha : 1.0f );
 	_pRenderer->DrawTexture(m_thTextureHandle, 
 							m_pControlledEntity->GetPosition(), 
 							m_bDrawCentered,
@@ -49,11 +50,7 @@ void RenderComponent::Update( float _delta )
 							(rotMagnitude != NULL) ? *rotOrigin : vec2(0.0f, 0.0f),
 							(rotMagnitude != NULL) ? *rotMagnitude : 0.0f,
 							(crop != NULL) ? *crop : rect::emptyRect(),
-							(red != NULL) ? *red : 1.0f,
-							(green != NULL) ? *green : 1.0f,
-							(blue != NULL) ? *blue : 1.0f,
-							(alpha != NULL) ? *alpha : 1.0f
-							);
+							color);
 }
 
 
