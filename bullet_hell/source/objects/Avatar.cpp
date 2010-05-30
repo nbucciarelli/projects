@@ -17,17 +17,21 @@
 #include "../common/Globals.h"
 #include "../common/EventIds.h"
 
+#define SPEED_SCALE 4.0
+
 Avatar::Avatar() : Entity()
 {
 	m_vPosition = vec2( 240.0f, 160.0f );
 	std::string scaleStr( "scale" );
 	Phyx->SetAttr< vec2 >( this, scaleStr, vec2( 4.0f, 4.0f ) );
 	Phyx->Add( new RenderComponent( this, "tempavatar.tga", 16, 16, true ), OP_UI );
+	
+	Phyx->RegisterForEvent( DPAD_MOVED, _NewEventFunctor( Avatar, this, &Avatar::OnDPadMoved ), EP_LOW );
 }
 
 Avatar::~Avatar()
 {
-
+	Phyx->UnregisterForEvent( this );
 }
 
 void Avatar::Update(float _delta)
@@ -46,6 +50,11 @@ void Avatar::Update(float _delta)
 		m_vPosition.y = 295.0f;
 }
 
+bool Avatar::OnDPadMoved(unsigned _event, BaseEvent* _data)
+{
+	m_vPosition += ((Vec2Event*)_data)->data * SPEED_SCALE;
+	return true;
+}
 
 
 

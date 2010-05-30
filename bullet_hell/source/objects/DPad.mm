@@ -33,9 +33,9 @@ DPad::DPad() :
 	Phyx->SetAttr< vec2 >( this, scaleStr, vec2( 4.0f, 4.0f ) );
 	Phyx->Add( new RenderComponent( this, "dpad_backdrop.tga", 16, 16, true ), OP_UI );
 	
-	Phyx->RegisterForEvent( TOUCHES_BEGAN, _NewEventFunctor( DPad, this, &DPad::TouchesBegan ), EP_HIGH );
-	Phyx->RegisterForEvent( TOUCHES_MOVED, _NewEventFunctor( DPad, this, &DPad::TouchesMoved ), EP_HIGH );
-	Phyx->RegisterForEvent( TOUCHES_ENDED, _NewEventFunctor( DPad, this, &DPad::TouchesEnded ), EP_HIGH );
+	Phyx->RegisterForEvent( TOUCHES_BEGAN, _NewEventFunctor( DPad, this, &DPad::OnTouchesBegan ), EP_HIGH );
+	Phyx->RegisterForEvent( TOUCHES_MOVED, _NewEventFunctor( DPad, this, &DPad::OnTouchesMoved ), EP_HIGH );
+	Phyx->RegisterForEvent( TOUCHES_ENDED, _NewEventFunctor( DPad, this, &DPad::OnTouchesEnded ), EP_HIGH );
 	
 }
 
@@ -57,7 +57,7 @@ void DPad::Update(float _delta)
 	}
 }
 
-bool DPad::TouchesBegan(unsigned _event, BaseEvent* _data)
+bool DPad::OnTouchesBegan(unsigned _event, BaseEvent* _data)
 {
 	if ( ((Vec2Event*)_data)->data.inCircle( m_vPosition, MAX_DISTANCE ) )
 	{
@@ -75,7 +75,7 @@ bool DPad::TouchesBegan(unsigned _event, BaseEvent* _data)
 	return true;
 }
 
-bool DPad::TouchesMoved(unsigned _event, BaseEvent* _data)
+bool DPad::OnTouchesMoved(unsigned _event, BaseEvent* _data)
 {
 	if ( m_bSelected )
 	{
@@ -92,7 +92,7 @@ bool DPad::TouchesMoved(unsigned _event, BaseEvent* _data)
 	return true;
 }
 
-bool DPad::TouchesEnded(unsigned _event, BaseEvent* _data)
+bool DPad::OnTouchesEnded(unsigned _event, BaseEvent* _data)
 {
 	if ( m_bSelected )
 	{

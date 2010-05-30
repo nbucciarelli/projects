@@ -47,6 +47,8 @@ protected:
 	
 private:
 	/*	Private Functions		*/
+	
+	bool OnDPadMoved(unsigned _event, BaseEvent* _data);
 };
 
 #endif

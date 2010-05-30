@@ -11,8 +11,6 @@
 #ifndef GamePlayState_H_
 #define GamePlayState_H_
 
-class Avatar;
-class DPad;
 
 #include "phyx/managers/StateManager.h"
 class GamePlayState : public BaseState
@@ -25,8 +23,6 @@ protected:
 	
 private:
 	/*	Private Data Members	*/
-	Avatar* m_Avatar;
-	DPad* m_DPad;
 	
 public:
 

@@ -29,14 +29,8 @@ GamePlayState::~GamePlayState()
 
 void GamePlayState::Enter()
 {
-	// I'd avoid GamePlayState storing avatar and dpad if i were you guys.
-	// the DPad already throws a DPAD_MOVED event with a vector
-	// this vector is scaled by the magnitude of the dpad and in the direction its aiming
-	m_Avatar = new Avatar();
-	m_DPad = new DPad();
-	Phyx->Add( m_DPad, OP_UPDATE );
-	
-	Phyx->Add( m_Avatar, OP_UPDATE );
+	Phyx->Add( new DPad(), OP_UPDATE );	
+	Phyx->Add( new Avatar(), OP_UPDATE );
 }
 
 void GamePlayState::Exit()
@@ -45,11 +39,6 @@ void GamePlayState::Exit()
 
 void GamePlayState::Update(float _delta)
 {
-	vec2 temp;
-	//temp.x = m_Avatar->GetPosition().x + ((m_DPad->GetPosition().x - HOME_POSITION.x) >> 2);
-	//temp.y = m_Avatar->GetPosition().y + ((m_DPad->GetPosition().y - HOME_POSITION.y) >> 2);
-	temp = m_Avatar->GetPosition() + ((m_DPad->GetPosition() - HOME_POSITION) / 4);
-	m_Avatar->SetPosition(temp);	
 }
 
 void GamePlayState::Render()
