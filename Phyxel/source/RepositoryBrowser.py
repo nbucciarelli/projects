@@ -11,6 +11,7 @@ class RepositoryBrowser( wx.Frame ):
         # Parent constructor
         wx.Frame.__init__( self, *args, **kwds )
         
+        
         # Create the file menu
         self._initMenuBar()
         
@@ -42,21 +43,21 @@ class RepositoryBrowser( wx.Frame ):
         
         # The tree object
         self.tree = wx.TreeCtrl( self, -1, style=wx.TR_HAS_BUTTONS | wx.TR_DEFAULT_STYLE | wx.SUNKEN_BORDER )
+        self._buildTree( rootPath )
         
         # Add tree object to frame
         sizer = wx.BoxSizer( wx.VERTICAL )
         sizer.Add( self.tree, 1, wx.EXPAND, 0 )
         self.SetAutoLayout( True )
         self.SetSizer( sizer )
-        sizer.Fit( self )
-        sizer.SetSizeHints( self )
+        #sizer.Fit( self )
+        #sizer.SetSizeHints( self )
         self.Layout()
         
         # register for the self.onExpand function
         wx.EVT_TREE_ITEM_EXPANDING( self.tree, self.tree.GetId(), self.onExpand )
         wx.EVT_TREE_ITEM_ACTIVATED( self.tree, self.tree.GetId(), self.onActivated )
         
-        self._buildTree( rootPath )
         
 
 
@@ -114,7 +115,14 @@ class RepositoryBrowser( wx.Frame ):
         onActivated will be called when the user double clicks a file
         This will determine what control to open to correspond with selected file
         """
-        pass
+        # Get the wxID of the activated item and ensure its valid.
+        itemId = event.GetItem()
+        if not itemId.IsOk():
+            itemId = self.tree.GetSelection()
+            
+        path = self.tree.GetPyData( itemId )[0]
+        frame = wx.Frame( None, wx.ID_ANY, str( path ) )
+        frame.Show( True )
     
     
     def onOpen(self, event):

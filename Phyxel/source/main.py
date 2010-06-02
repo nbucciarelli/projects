@@ -9,7 +9,7 @@ from RepositoryBrowser import RepositoryBrowser
 app = wx.App(False)
 
 # create a frame
-repositoryBrowser = RepositoryBrowser( None, wx.ID_ANY, "Phyxel" )
+repositoryBrowser = RepositoryBrowser( None, wx.ID_ANY, "Phyxel", size=(225,650) )
 
 # show the frame
 repositoryBrowser.Show(True)
