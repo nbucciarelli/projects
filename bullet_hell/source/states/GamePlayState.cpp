@@ -10,6 +10,7 @@
 #include "GamePlayState.h"
 
 #include "Phyx/phyx.h"
+#include "phyx/components/RenderTSComponent.h"
 
 #include "../common/Globals.h"
 
@@ -31,6 +32,7 @@ void GamePlayState::Enter()
 {
 	Phyx->Add( new DPad(), OP_UPDATE );	
 	Phyx->Add( new Avatar(), OP_UPDATE );
+	Phyx->Add( new RenderTSComponent( "tm_faces.bin" ), OP_BACKGROUND );
 }
 
 void GamePlayState::Exit()

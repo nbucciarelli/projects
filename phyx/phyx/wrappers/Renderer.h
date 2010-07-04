@@ -129,7 +129,7 @@ public:
 	 *	Created:	[KR] April 11, 2009
 	 *	Purpose:	Load a texture given a FileName and return a handle.
 	 ****************************************/
-	TextureHandle LoadTexture(const char* _fileName, short _width, short _height);
+	TextureHandle LoadTexture(const char* _fileName, short _width = -1, short _height = -1);
 	
 	/****************************************
 	 *	Function:	ReleaseTexture

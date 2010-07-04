@@ -12,6 +12,7 @@
 #include "phyx/managers/EventManager.h"
 #include "phyx/components/RenderComponent.h"
 #include "phyx/math/vec2.h"
+#include "phyx/math/rect.h"
 #include "phyx/phyx.h"
 
 #include "../common/Globals.h"

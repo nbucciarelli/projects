@@ -115,20 +115,23 @@ TextureHandle CRenderer::LoadTexture(const char* _fileName, short _width, short 
 	// Set up image data
 	tTexture tex;
 	tex.fileName = _fileName;
-	tex.width = _width;
-	tex.height = _height;
 	tex.refCount = 1;
 	
 	// Decode the texture file
-	GLbyte* data = DecodeTGA(_fileName, tex.canvasWidth, tex.canvasHeight);
-	if (data == NULL)
+	GLbyte* data = DecodeTGA( _fileName, tex.canvasWidth, tex.canvasHeight );
+	if ( data == NULL )
+	{
 		return -1;
+	}
+	
+	tex.width = ( _width != -1 ) ? _width : tex.canvasWidth;
+	tex.height = ( _height != -1 ) ? _height : tex.canvasHeight;
 	
 	// Generate texture
-	glGenTextures(1, &tex.handle);
+	glGenTextures( 1, &tex.handle );
 	
 	// put texture into the vector.
-	if (index == -1)
+	if ( index == -1 )
 	{
 		// Not +1 because it is before the push back.
 		index = m_vTextures.size();
@@ -203,22 +206,16 @@ void CRenderer::DrawTexture(TextureHandle _handle, const vec2& _pos, bool _cente
 	// Bind the texture to be drawn
 	glBindTexture(GL_TEXTURE_2D, tex->handle);
 	
-	// Set up the targets verts
-	float xVert = tex->width * _scale.x * .5f;
-	float yVert = tex->height * _scale.y * .5f;
-	GLfloat verts[] = {
-		-xVert, -yVert,
-		xVert, -yVert,
-		-xVert, yVert,
-		xVert, yVert
-	};
-	
 	// Set up targets tex coords
 	GLfloat* texCoords;
+	int width;
+	int height;
 	if (_crop == rect::emptyRect())
 	{
-		float xTex = tex->width / static_cast<float>(tex->canvasWidth);
-		float yTex = tex->height / static_cast<float>(tex->canvasHeight);
+		width = tex->width;
+		height = tex->height;
+		float xTex = width / static_cast<float>(tex->canvasWidth);
+		float yTex = height / static_cast<float>(tex->canvasHeight);
 		GLfloat tmpTexCoords[] = {
 			0, 0,
 			xTex, 0,
@@ -229,6 +226,8 @@ void CRenderer::DrawTexture(TextureHandle _handle, const vec2& _pos, bool _cente
 	}
 	else
 	{
+		width = _crop.right - _crop.left;
+		height = _crop.bottom - _crop.top;
 		float leftTex = _crop.left / static_cast<float>(tex->canvasWidth);
 		float topTex = _crop.top / static_cast<float>(tex->canvasHeight);
 		float rightTex = _crop.right / static_cast<float>(tex->canvasWidth);
@@ -242,6 +241,16 @@ void CRenderer::DrawTexture(TextureHandle _handle, const vec2& _pos, bool _cente
 		texCoords = tmpTexCoords;
 	}
 	
+	// Set up the targets verts
+	float xVert = width * _scale.x * .5f;
+	float yVert = height * _scale.y * .5f;
+	GLfloat verts[] = {
+		-xVert, -yVert,
+		xVert, -yVert,
+		-xVert, yVert,
+		xVert, yVert
+	};
+	
 	// Save the matrix
 	glPushMatrix();
 	{
@@ -249,7 +258,9 @@ void CRenderer::DrawTexture(TextureHandle _handle, const vec2& _pos, bool _cente
 		glColor4f(_color.r, _color.g, _color.b, _color.a);
 		// If we aren't centered then the lower left is the 0, 0 point of square
 		if (!_centered)
-			glTranslatef(tex->width * _scale.x * .5f, tex->height * _scale.y * .5f, 0.0f);
+		{
+			glTranslatef(width * _scale.x * .5f, height * _scale.y * .5f, 0.0f);
+		}
 		
 		// Translate
 		glTranslatef(_pos.x, _pos.y, 0.0f);
