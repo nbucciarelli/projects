@@ -12,8 +12,11 @@
 #include "Globals.h"
 #include "../objects/Entity.h"
 
-Camera::Camera(rect& _cameraBounds, rect& _worldBounds) :
-	m_rCameraBounds( _cameraBounds ), m_rWorldBounds( _worldBounds )
+Camera::Camera(Entity* _entity, rect _cameraBounds, rect _worldBounds) :
+	m_pEntity( _entity ),
+	m_vPosition( 0.0f, 0.0f),
+	m_rCameraBounds( _cameraBounds ), 
+	m_rWorldBounds( _worldBounds )
 {
 }
 
@@ -31,20 +34,20 @@ void Camera::SetWorldBounds( rect& _worldBounds )
 	m_rWorldBounds = _worldBounds;
 }
 
-void Camera::Update()
+void Camera::Update(float _delta)
 {
-	float relativePosX = m_pEntity->GetPosition().x - m_vPosition.x;
-	float relativePosY = m_pEntity->GetPosition().y - m_vPosition.y;
+	float relativePosX = m_pEntity->GetPosition().x - m_vPosition.x - ( SCREEN_WIDTH / 2 );
+	float relativePosY = m_pEntity->GetPosition().y - m_vPosition.y - ( SCREEN_HEIGHT / 2 );
 	
 	// Camera needs to move right?
 	if (relativePosX > m_rCameraBounds.right)
-		m_vPosition.x = m_pEntity->GetPosition().x - m_rCameraBounds.right;
+		m_vPosition.x = m_pEntity->GetPosition().x - ( ( SCREEN_WIDTH / 2 ) + m_rCameraBounds.right );
 	else if (relativePosX < m_rCameraBounds.left)
-		m_vPosition.x = m_pEntity->GetPosition().x - m_rCameraBounds.left;
+		m_vPosition.x = m_pEntity->GetPosition().x - ( ( SCREEN_WIDTH / 2 ) + m_rCameraBounds.left );
 	if (relativePosY > m_rCameraBounds.bottom)
-		m_vPosition.y = m_pEntity->GetPosition().y - m_rCameraBounds.bottom;
+		m_vPosition.y = m_pEntity->GetPosition().y - ( ( SCREEN_HEIGHT / 2 ) + m_rCameraBounds.bottom );
 	else if (relativePosY < m_rCameraBounds.top)
-		m_vPosition.y = m_pEntity->GetPosition().y - m_rCameraBounds.top;
+		m_vPosition.y = m_pEntity->GetPosition().y - ( ( SCREEN_HEIGHT / 2 ) + m_rCameraBounds.top );
 	
 	// Cap to world bounds
 	if (m_vPosition.x > m_rWorldBounds.right - SCREEN_WIDTH)

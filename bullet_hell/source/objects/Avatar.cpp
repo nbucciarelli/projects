@@ -13,6 +13,7 @@
 #include "phyx/components/RenderComponent.h"
 #include "phyx/math/vec2.h"
 #include "phyx/phyx.h"
+#include "phyx/common/Camera.h"
 
 #include "../common/Globals.h"
 #include "../common/EventIds.h"
@@ -40,8 +41,8 @@ void Avatar::Update(float _delta)
 	if(m_vPosition.x <= 25.0f)
 		m_vPosition.x = 25.0f;
 	
-	if(m_vPosition.x >= 455.0f)
-		m_vPosition.x = 455.0f;
+	if(m_vPosition.x >= Phyx->GetCamera()->GetWorldBounds().right - 16)
+		m_vPosition.x = Phyx->GetCamera()->GetWorldBounds().right - 16;
 	
 	if(m_vPosition.y <= 25.0f)
 		m_vPosition.y = 25.0f;

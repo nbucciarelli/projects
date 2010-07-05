@@ -29,6 +29,7 @@ private:
 	
 	TextureHandle	m_thTextureHandle;
 	bool			m_bDrawCentered;
+	bool			m_bUseCamera;
 	
 public:
 	/*	Public Functions		*/
@@ -36,7 +37,7 @@ public:
 	/**********************************
 	 *	Function:	Constructor
 	 **********************************/
-	RenderComponent(Entity* _controlledEntity, const char* _textureName, short _texWidth, short _texHeight, bool _drawCentered);
+	RenderComponent(Entity* _controlledEntity, const char* _textureName, short _texWidth, short _texHeight, bool _drawCentered = true, bool _useCam = true);
 	
 	/**********************************
 	 *	Function:	Destructor

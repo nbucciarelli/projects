@@ -11,6 +11,7 @@
 
 #include "Phyx/phyx.h"
 #include "phyx/components/RenderTSComponent.h"
+#include "phyx/common/Camera.h"
 
 #include "../common/Globals.h"
 
@@ -30,8 +31,12 @@ GamePlayState::~GamePlayState()
 
 void GamePlayState::Enter()
 {
-	Phyx->Add( new DPad(), OP_UPDATE );	
-	Phyx->Add( new Avatar(), OP_UPDATE );
+	Phyx->Add( new DPad(), OP_UPDATE );
+	Avatar* avatar = new Avatar();
+	Camera* cam = new Camera( avatar, rect( -75, 50, 75, -50 ), rect( 0, 320, 480 * 5, 0 ) );
+	Phyx->Add( avatar, OP_UPDATE );
+	Phyx->Add( cam, OP_UPDATE );
+	Phyx->SetCamera( cam );
 	Phyx->Add( new RenderTSComponent( "tm_faces.bin" ), OP_BACKGROUND );
 }
 

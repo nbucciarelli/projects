@@ -32,7 +32,7 @@ DPad::DPad() :
 	m_vPosition = vec2( HOME_POSITION );
 	std::string scaleStr( "scale" );
 	Phyx->SetAttr< vec2 >( this, scaleStr, vec2( 4.0f, 4.0f ) );
-	Phyx->Add( new RenderComponent( this, "dpad_backdrop.tga", 16, 16, true ), OP_UI );
+	Phyx->Add( new RenderComponent( this, "dpad_backdrop.tga", 16, 16, true, false ), OP_UI );
 	
 	Phyx->RegisterForEvent( TOUCHES_BEGAN, _NewEventFunctor( DPad, this, &DPad::OnTouchesBegan ), EP_HIGH );
 	Phyx->RegisterForEvent( TOUCHES_MOVED, _NewEventFunctor( DPad, this, &DPad::OnTouchesMoved ), EP_HIGH );

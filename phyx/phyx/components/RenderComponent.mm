@@ -12,10 +12,12 @@
 #include "../wrappers/Renderer.h"
 #include "../phyx.h"
 #include "../objects/Entity.h"
+#include "../common/Camera.h"
 
-RenderComponent::RenderComponent(Entity* _controlledEntity, const char* _textureName, short _texWidth, short _texHeight, bool _drawCentered) :
+RenderComponent::RenderComponent(Entity* _controlledEntity, const char* _textureName, short _texWidth, short _texHeight, bool _drawCentered, bool _useCam) :
 	BaseComponent( _controlledEntity ),
-	m_bDrawCentered( _drawCentered )
+	m_bDrawCentered( _drawCentered ),
+	m_bUseCamera( _useCam )
 {
 	m_thTextureHandle = _pRenderer->LoadTexture( _textureName, _texWidth, _texHeight);
 }
@@ -44,7 +46,7 @@ void RenderComponent::Update( float _delta )
 	const float * const alpha = Phyx->GetAttr< float >( (PhyxObject*)m_pControlledEntity, alphaStr );
 	vec4 color( (red != NULL) ? *red : 1.0f, (green != NULL) ? *green : 1.0f, (blue != NULL) ? *blue : 1.0f, (alpha != NULL) ? *alpha : 1.0f );
 	_pRenderer->DrawTexture(m_thTextureHandle, 
-							m_pControlledEntity->GetPosition(), 
+							m_pControlledEntity->GetPosition() - ( (m_bUseCamera == true) ? Phyx->GetCamera()->GetPosition() : vec2() ), 
 							m_bDrawCentered,
 							(scale != NULL) ? *scale : vec2(1.0f, 1.0f),
 							(rotMagnitude != NULL) ? *rotOrigin : vec2(0.0f, 0.0f),

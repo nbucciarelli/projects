@@ -26,6 +26,7 @@ class BaseEvent;
 class BaseState;
 class PhyxObject;
 class BaseFunctor;
+class Camera;
 
 #define _NewEventFunctor(_type, _obj, _func) new EventFunctor< _type >( (_obj), (_func) )
 
@@ -48,6 +49,7 @@ private:
 	StateManager*		m_pStateManager;
 	EventManager*		m_pEventManager;
 	AttributeManager*	m_pAttributeManager;
+	Camera*				m_pCamera;
 	
 	// For time keeping
 	CFAbsoluteTime	m_currTime;
@@ -109,6 +111,18 @@ public:
 	 *	Purpose:	Anything that needs to execute post main render
 	 **********************************/
 	void PostRender();
+	
+	/**********************************
+	 *	Function:	SetCamera
+	 *	Purpose:	Set the camera
+	 **********************************/
+	void SetCamera( Camera* _cam) { m_pCamera = _cam; }
+	
+	/**********************************
+	 *	Function:	GetCamera
+	 *	Purpose:	Get the camera
+	 **********************************/
+	Camera* GetCamera() { return m_pCamera; }
 	
 	/**********************************
 	 *	Function:	GetDelta

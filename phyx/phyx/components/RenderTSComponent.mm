@@ -14,6 +14,8 @@
 #include "../wrappers/Renderer.h"
 #include "../common/Logger.h"
 #include "../common/alg.h"
+#include "../phyx.h"
+#include "../common/Camera.h"
 
 RenderTSComponent::RenderTSComponent(const char* _filePath) :
 	BaseComponent( NULL )
@@ -63,7 +65,7 @@ void RenderTSComponent::Update( float _delta )
 		int tileX = ( m_pnTiles[ i ] % (256/32) ) * m_nTileWidth;
 		int tileY = 224 - ( ( m_pnTiles[ i ] / (256/32) ) * m_nTileHeight );
 		_pRenderer->DrawTexture(m_thTextureHandle,
-								vec2( ( i % m_nMapWidth) * m_nTileWidth, ( ( i / m_nMapWidth ) + 1 ) * m_nTileHeight ),
+								vec2( ( i % m_nMapWidth) * m_nTileWidth, ( ( i / m_nMapWidth ) + 1 ) * m_nTileHeight ) - Phyx->GetCamera()->GetPosition(),
 								false,
 								vec2(1.0f, 1.0f),
 								vec2(0.0f, 0.0f),

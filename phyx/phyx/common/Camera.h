@@ -39,7 +39,7 @@ public:
 	/**********************************
 	 *	Function:	Constructor
 	 **********************************/
-	Camera(rect& _cameraBounds, rect& _worldBounds);
+	Camera(Entity* _entity, rect _cameraBounds, rect _worldBounds);
 	
 	/**********************************
 	 *	Function:	Destructor
@@ -62,7 +62,19 @@ public:
 	 *	Function:	Update
 	 *	Purpose:	Attach the camera to an entity
 	 **********************************/
-	void Update();
+	void Update(float _delta);
+	
+	/**********************************
+	 *	Function:	GetPosition
+	 *	Purpose:	Return the position
+	 **********************************/
+	vec2& GetPosition() { return m_vPosition; }
+	
+	/**********************************
+	 *	Function:	GetWorldBounds
+	 *	Purpose:	Return the world bounds
+	 **********************************/
+	rect& GetWorldBounds() { return m_rWorldBounds; }
 	
 protected:
 	/*	Protected Functions		*/
